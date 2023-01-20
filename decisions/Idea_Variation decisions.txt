@@ -1,0 +1,92 @@
+country_decisions = {
+
+##############################################
+###### Monarchie Decision
+##############################################	
+	
+	
+	monarchie_dec = {
+		major = yes
+		potential = {
+		
+			
+			
+			has_idea = monarchie1
+			
+			
+			
+			
+		}
+		allow = {
+			
+			has_idea = monarchie1
+			has_heir = no
+			stability = 1 
+			#prestige = 0
+
+		}
+		effect = {
+			
+						
+		add_adm_power = -50	
+		add_prestige = -10
+		country_event = { id = flogi_ideas.100 days = 0 }
+			
+			
+			
+			
+			
+		}
+		
+		ai_will_do = {
+			factor = 5
+
+		
+
+		}
+	}	
+	
+	
+
+	
+##############################################
+###### Königreich Idee Decision
+##############################################	
+	
+	
+	konigreich_dec = {
+		major = yes
+		
+		potential = {
+		
+			has_idea = konigreich1
+		}
+		allow = {
+			
+			has_idea = konigreich1
+			
+			NOT = { 
+			
+			has_country_modifier = konigreich_done
+			
+			}
+		}
+		effect = {			
+		country_event = { id = flogi_ideas.101 days = 0 }
+			
+		}
+		
+		ai_will_do = {
+			factor = 5
+			
+			modifier = {
+			factor = 0.000001
+			num_of_loans = 5
+			}
+		}
+	}
+
+
+##############################################
+###### Sailor/Manpower Conversion Decision
+##############################################	

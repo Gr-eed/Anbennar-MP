@@ -1,0 +1,218 @@
+
+coalition_of_free_nations = {
+	potential = {
+		has_idea_group = soldnerheer0
+		}
+	trigger = {
+		AND = {
+			NOT = { coalition_target = ROOT }
+			is_in_coalition_war = yes
+		}
+
+	}
+	mercenary_discipline = 0.05
+	land_forcelimit = 20
+	#unlocks the Coalition Army
+}
+brillite0 = {
+	potential = {
+		faction_in_power = tec_brilliance
+		}
+	trigger = {
+		NOT = { innovativeness = 20 }
+	}
+}
+brillite20 = {
+	potential = {
+		faction_in_power = tec_brilliance
+		}
+	trigger = {
+		innovativeness = 20
+		NOT = { innovativeness = 40 }
+	}
+	advisor_cost = -0.04
+	custom_tooltip = brillite20_tt
+}
+brillite40 = {
+	potential = {
+		faction_in_power = tec_brilliance
+		}
+	trigger = {
+		innovativeness = 40
+		NOT = { innovativeness = 60 }
+	}
+	advisor_cost = -0.08
+	custom_tooltip = brillite40_tt
+}
+brillite60 = {
+	potential = {
+		faction_in_power = tec_brilliance
+		}
+	trigger = {
+		innovativeness = 60
+		NOT = { innovativeness = 80 }
+	}
+	advisor_cost = -0.12
+	custom_tooltip = brillite60_tt
+}
+brillite80 = {
+	potential = {
+		faction_in_power = tec_brilliance
+		}
+	trigger = {
+		innovativeness = 80
+		NOT = { innovativeness = 100 }
+	}
+	advisor_cost = -0.16
+	custom_tooltip = brillite80_tt
+}
+brillite100 = {
+	potential = {
+		faction_in_power = tec_brilliance
+		}
+	trigger = {
+		innovativeness = 100
+	}
+	advisor_cost = -0.2
+	custom_tooltip = brillite100_tt
+}
+milmage1 = {
+	potential = {
+		has_idea = militarismus7
+	}
+	trigger = {
+		ROOT = {
+			is_variable_equal = { 
+				which = milmage_count
+				value = 1
+			}
+		}
+	}
+	shock_damage = 0.015
+}
+milmage2 = {
+	potential = {
+		has_idea = militarismus7
+	}
+	trigger = {
+		ROOT = {
+			is_variable_equal = { 
+				which = milmage_count
+				value = 2
+			}
+		}
+	}
+	shock_damage = 0.03
+}
+milmage3 = {
+	potential = {
+		has_idea = militarismus7
+	}
+	trigger = {
+		ROOT = {
+			is_variable_equal = { 
+				which = milmage_count
+				value = 3
+			}
+		}
+	}
+	shock_damage = 0.045
+}
+milmage4 = {
+	potential = {
+		has_idea = militarismus7
+	}
+	trigger = {
+		ROOT = {
+			is_variable_equal = { 
+				which = milmage_count
+				value = 4
+			}
+		}
+	}
+	shock_damage = 0.06
+}
+milmage5 = {
+	potential = {
+		has_idea = militarismus7
+	}
+	trigger = {
+		ROOT = {
+			is_variable_equal = { 
+				which = milmage_count
+				value = 5
+			}
+		}
+	}
+	shock_damage = 0.075
+}
+milmage6 = {
+	potential = {
+		has_idea = militarismus7
+	}
+	trigger = {
+		ROOT = {
+			is_variable_equal = { 
+				which = milmage_count
+				value = 6
+			}
+		}
+	}
+	shock_damage = 0.09
+}
+milmage7 = {
+	potential = {
+		has_idea = militarismus7
+	}
+	trigger = {
+		ROOT = {
+			is_variable_equal = { 
+				which = milmage_count
+				value = 7
+			}
+		}
+	}
+	shock_damage = 0.105
+}
+milmage8 = {
+	potential = {
+		has_idea = militarismus7
+	}
+	trigger = {
+		ROOT = {
+			is_variable_equal = { 
+				which = milmage_count
+				value = 8
+			}
+		}
+	}
+	shock_damage = 0.12
+}
+milmage9 = {
+	potential = {
+		has_idea = militarismus7
+	}
+	trigger = {
+		ROOT = {
+			is_variable_equal = { 
+				which = milmage_count
+				value = 9
+			}
+		}
+	}
+	shock_damage = 0.135
+}
+milmage10 = {
+	potential = {
+		has_idea = militarismus7
+	}
+	trigger = {
+		ROOT = {
+			check_variable = { 
+				which = milmage_count
+				value = 10
+			}
+		}
+	}
+	shock_damage = 0.15
+}

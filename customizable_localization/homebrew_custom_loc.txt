@@ -1,0 +1,89 @@
+#Serpent's Rot Reaction
+defined_text = {
+	name = GetSerpentrotReaction
+	text = {
+		localisation_key = SerpentrotReactionRegentCourt
+		trigger = {
+			religion = regent_court
+		}
+	}
+	text = {
+		localisation_key = SerpentrotReactionCorinite
+		trigger = {
+			religion = corinite
+		}
+	}
+	text = {
+		localisation_key = SerpentrotReactionRavelian
+		trigger = {
+			religion = ravelian
+		}
+	}
+	text = {
+		localisation_key = SerpentrotReactionFaithless
+		trigger = {
+			religion_group = faithless
+		}
+	}
+	text = {
+		localisation_key = SerpentrotReactionKhetist
+		trigger = {
+			religion = khetist
+		}
+	}
+	text = {
+		localisation_key = SerpentrotReactionGnollish
+		trigger = {
+			religion_group = gnollish
+		}
+	}
+	text = {
+		localisation_key = SerpentrotReactionDwarven
+		trigger = {
+			religion_group = dwarven
+		}
+	}
+	text = {
+		localisation_key = SerpentrotReactionElven
+		trigger = {
+			religion_group = elven
+		}
+	}
+	text = {
+		localisation_key = SerpentrotReactionBulwari
+		trigger = {
+			religion_group = bulwari
+		}
+	}
+	text = {
+		localisation_key = SerpentrotReactionOrcish
+		trigger = {
+			religion_group = orcish
+		}
+	}
+	text = {
+		localisation_key = SerpentrotReactionDragonCult
+		trigger = {
+			religion_group = dragon_cult
+		}
+	}
+	text = {
+		localisation_key = SerpentrotReactionFey
+		trigger = {
+			religion_group = fey_religion
+		}
+	}
+	text = {
+		localisation_key = SerpentrotReactionRaheni
+		trigger = {
+			religion_group = raheni
+		}
+	}
+	text = {
+		localisation_key = SerpentrotReactionOther
+		trigger = {
+			always = yes
+		}
+	}
+}
+

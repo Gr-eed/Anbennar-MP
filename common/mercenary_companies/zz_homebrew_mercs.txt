@@ -1,0 +1,456 @@
+#you always get these mercs
+merc_heroic_bands = {
+	regiments_per_development = 0.1
+		cavalry_weight = 0
+		artillery_weight = 0
+	cost_modifier = 0.75
+	trigger = {
+		OR = {
+		has_idea = soldnerheer5
+		}
+		NOT = { has_country_modifier = centaur_military }
+	}
+	modifier = {
+		land_morale = 0.2
+		shock_damage = 0.2
+	}
+}
+merc_light_brigade = {
+	regiments_per_development = 0.05
+		cavalry_weight = 1
+		cavalry_cap = 60
+		artillery_weight = 0
+	cost_modifier = 0.6
+	trigger = {
+		OR = {
+		has_idea = soldnerheer5
+		}
+	}
+	modifier = {
+	cavalry_power = 0.2
+	movement_speed = 0.1
+	shock_damage_received = -0.1
+	}
+}
+merc_teleporting_army = {
+	regiments_per_development = 0.08
+		cavalry_weight = 0.1
+		cavalry_cap = 4
+		artillery_weight = 0.4
+	cost_modifier = 0.6
+	trigger = {
+		OR = {
+		has_idea = soldnerheer5
+		}
+	}
+	modifier = {
+		recover_army_morale_speed = 1
+		movement_speed = 0.2
+		prestige_from_land = 0.5
+	}
+}
+merc_professional = {
+	regiments_per_development = 0.04
+		cavalry_weight = 0
+		artillery_weight = 0
+	cost_modifier = 1
+	trigger = {
+		AND = {
+		has_idea = soldnerheer5
+		is_year = 1600
+		}
+	}
+	modifier = {
+		shock_damage = 0.1
+		fire_damage = 0.1
+		fire_damage_received = -0.2
+		shock_damage_received = -0.2
+		mercenary_manpower = -0.3
+	}
+}
+merc_independent_artificers = {
+	regiments_per_development = 0.04
+		cavalry_weight = 0
+		artillery_weight = 0.3
+	cost_modifier = 1
+	trigger = {
+		AND = {
+		has_idea = soldnerheer5
+		has_institution = manufactories
+		}
+	}
+	modifier = {
+		infantry_fire = 0.3
+		shock_damage_received = -0.2
+		fire_damage = 0.3
+		reinforce_cost_modifier = 0.5
+	}
+}
+#needs battlemage academies
+merc_magisters_majesties = {
+	regiments_per_development = 0.02
+		cavalry_weight = 0
+		artillery_weight = 0
+	cost_modifier = 1
+	trigger = {
+		AND = {
+		has_idea = soldnerheer5
+		has_estate_privilege = estate_mages_battlemage_academies
+		}
+	}
+	modifier = {
+		infantry_shock = 2
+		land_morale = 0.1
+		fire_damage_received = -0.1
+	}
+}
+#locational mercs
+#marines
+merc_munas_marines = {
+	regiments_per_development = 0.02
+		cavalry_weight = 0
+		artillery_weight = 0
+		home_province = 380 #Eborthil
+	cost_modifier = 0.75
+	trigger = {
+		OR = { 
+		has_idea = soldnerheer5
+		tag = A47 # Eborthil
+		}
+	}
+	modifier = {
+	movement_speed_onto_off_boat_modifier = 2
+	infantry_power = 0.1
+	shock_damage_received = 0.1
+	}
+}
+#harpies
+merc_shrieking_eagles = {
+	regiments_per_development = 0.03
+		cavalry_weight = 0
+		artillery_weight = 0
+		home_province = 660 #Harpylen
+	cost_modifier = 0.75
+	trigger = {
+		OR = {
+		has_idea = soldnerheer5
+		}
+		NOT = { has_country_modifier = centaur_military }
+		}
+	modifier = {
+	infantry_power = 0.1
+	shock_damage_received = -0.1
+	fire_damage_received = -0.1
+	may_recruit_female_generals = yes
+        female_advisor_chance = 1.0
+	}
+}
+#centaurs
+merc_caehns_band = {
+	regiments_per_development = 0.06
+		cavalry_weight = 1
+		cavalry_cap = 60
+		artillery_weight = 0
+		home_province = 5049 #West Forbidden Plains
+	cost_modifier = 0.75
+	trigger = {
+		OR = {
+		has_idea = soldnerheer5
+		}
+	}
+	modifier = {
+	cavalry_shock = 0.2
+	cavalry_power = 0.2
+	cav_to_inf_ratio = 0.5
+	land_morale = -0.1
+	}
+}
+#goblins
+merc_ruin_batteries = {
+	regiments_per_development = 0.03
+	cavalry_weight = 0
+	artillery_weight = 1
+	home_province = 723 #Bayvic
+	cost_modifier = 1
+	trigger = {
+		OR = {
+		has_idea = soldnerheer5
+		}
+	}
+	modifier = {
+	artillery_fire = 0.5
+	}
+}
+#orcs
+merc_dookansons_followers = {
+	regiments_per_development = 0.06
+	cavalry_weight = 0.3
+	cavalry_cap = 8
+	artillery_weight = 0
+	home_province = 740 #Frozenmaw
+	cost_modifier = 0.75
+	trigger = {
+		OR = {
+		has_idea = soldnerheer5
+		}
+	}
+	modifier = {
+	land_morale = 0.1
+	shock_damage = 0.1
+	shock_damage_received = -0.1
+	fire_damage = -0.1
+	}
+}
+#kobolds
+merc_dragoncult_cultists = {
+	regiments_per_development = 0.08
+		cavalry_weight = 0.2
+		cavalry_cap = 2
+		artillery_weight = 0.2
+		home_province = 185 #Bluescale
+	cost_modifier = 0.4
+	trigger = {
+		OR = {
+		has_idea = soldnerheer5
+		}
+	}
+	modifier = {
+		loot_amount = 0.5
+		infantry_fire = 0.5
+		discipline = -0.1
+	}
+}
+#wood elves
+merc_fey_touched = {
+	regiments_per_development = 0.02
+	cavalry_weight = 0.3
+	cavalry_cap = 8
+	artillery_weight = 0
+	home_province = 3024 #Cyranvar
+	cost_modifier = 1
+	trigger = {
+		OR = {
+		has_idea = soldnerheer5
+		}
+	}
+	modifier = {
+	discipline = 0.05
+	fire_damage_received = -0.2
+	reinforce_speed = -0.5
+	}
+}
+#desert elves
+merc_jadd_auxiliaries = {
+	regiments_per_development = 0.01
+	cavalry_weight = 1
+	cavalry_cap = 16
+	artillery_weight = 0
+	home_province = 2909 #Jaddari
+	cost_modifier = 1
+	trigger = {
+		OR = {
+		has_idea = soldnerheer5
+		}
+		religion = the_jadd
+	}
+	modifier = {
+	discipline = 0.05
+	shock_damage = 0.2
+	reinforce_speed = -0.5
+	}
+}
+#sun elves
+merc_jaherian_knights = {
+	regiments_per_development = 0.04
+	cavalry_weight = 1
+	cavalry_cap = 24
+	artillery_weight = 0
+	home_province = 561 #Irrliam
+	cost_modifier = 1
+	trigger = {
+		OR = {
+		has_idea = soldnerheer5
+		}
+		NOT = { religion = the_jadd }
+	}
+	modifier = {
+	land_morale = 0.15
+	cavalry_power = 0.2
+	reinforce_speed = -0.25
+	}
+}
+#harimari
+merc_tonys_freezers = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0
+	artillery_weight = 0
+	home_province = 4510 #Rahenraj
+	cost_modifier = 0.6
+	trigger = {
+		OR = {
+		has_idea = soldnerheer5
+		}
+	}
+	modifier = {
+	infantry_shock = 0.3
+	infantry_power = 0.1
+	movement_speed = 0.1
+	fire_damage = -0.2
+	}
+}
+#gnomes
+merc_giberdi_tinker_corps = {
+	regiments_per_development = 0.02
+	cavalry_weight = 0
+	artillery_weight = 0.8
+	home_province = 271 #Giberd
+	cost_modifier = 0.5
+	trigger = {
+		OR = {
+		has_idea = soldnerheer5
+		}
+	}
+	modifier = {
+	fire_damage = 0.2
+	siege_ability = 0.3
+	}
+}
+#gnolls
+merc_howling_hunters = {
+	regiments_per_development = 0.06
+	cavalry_weight = 0.3
+	cavalry_cap = 16
+	artillery_weight = 0
+	home_province = 487 # Gnollakaz
+	cost_modifier = 0.3
+	trigger = {
+		OR = {
+		has_idea = soldnerheer5
+		}
+		NOT = { has_country_modifier = centaur_military }
+	}
+	modifier = {
+	shock_damage = 0.15
+	shock_damage_received = -0.15
+	movement_speed = 0.1
+	fire_damage = -0.1
+	}
+}
+#dwarves
+merc_silvershield_brigade = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0
+	artillery_weight = 0
+	home_province = 2864 #Asra Expedition
+	cost_modifier = 0.45
+	trigger = {
+		OR = {
+		has_idea = soldnerheer5
+		}
+		NOT = { has_country_modifier = monstrous_nation}
+		NOT = { has_country_modifier = centaur_military }
+	}
+	modifier = {
+	shock_damage_received = -0.15
+	fire_damage_received = -0.15
+	}
+}
+merc_dwarovar_regulars = {
+	regiments_per_development = 0.07
+	cavalry_weight = 0.1
+	cavalry_cap = 2
+	artillery_weight = 0.4
+	home_province = 4284 #Ovdal-az-An
+	cost_modifier = 0.6
+	trigger = {
+		OR = {
+		has_idea = soldnerheer5
+		}
+		NOT = { has_country_modifier = monstrous_nation}
+		NOT = { has_country_modifier = centaur_military }
+	}
+	modifier = {
+	shock_damage_received = -0.15
+	backrow_artillery_damage = 0.1
+	}
+}
+#Aelantir mercs
+merc_valorpoint = {
+	regiments_per_development = 0.06
+	cavalry_weight = 0.3
+	cavalry_cap = 4
+	artillery_weight = 0.2
+	home_province = 1047 #Valorpoint
+	cost_modifier = 0.75
+	trigger = {
+		OR = {
+		has_idea = soldnerheer5
+		}
+		NOT = { has_country_modifier = monstrous_nation }
+		NOT = { has_country_modifier = centaur_military }
+	}
+	modifier = {
+	cavalry_power = 0.15
+	movement_speed = 0.15
+	}
+}
+merc_ynn = {
+	regiments_per_development = 0.04
+	cavalry_weight = 0.3
+	cavalry_cap = 10
+	artillery_weight = 0
+	home_province = 1169 #Malacnar
+	cost_modifier = 1
+	trigger = {
+		OR = {
+		has_idea = soldnerheer5
+		}
+		NOT = { has_country_modifier = monstrous_nation }
+		NOT = { has_country_modifier = centaur_military }
+	}
+	modifier = {
+	shock_damage = 0.2
+	army_tradition_from_battle = 0.5
+	}
+}
+merc_eordand = {
+	regiments_per_development = 0.06
+	cavalry_weight = 0.2
+	cavalry_cap = 4
+	artillery_weight = 0
+	home_province = 6241 #Domandrod
+	cost_modifier = 0.8
+	trigger = {
+		OR = {
+		has_idea = soldnerheer5
+		}
+		NOT = { has_country_modifier = monstrous_nation }
+		NOT = { has_country_modifier = centaur_military }
+	}
+	modifier = {
+	land_morale = 0.1
+	shock_damage = 0.1
+	movement_speed = 0.15
+	}
+}
+merc_taychend = {
+	regiments_per_development = 0.1
+	cavalry_weight = 0.5
+	cavalry_cap = 30
+	artillery_weight = 0
+	home_province = 2487 #Larankar
+	cost_modifier = 1
+	trigger = {
+		OR = {
+		has_idea = soldnerheer5
+		}
+		NOT = { has_country_modifier = monstrous_nation }
+		NOT = { has_country_modifier = centaur_military }
+	}
+	modifier = {
+	cavalry_power = 0.1
+	available_province_loot = 0.5
+	loot_amount = 0.5
+	movement_speed = -0.1
+	}
+}

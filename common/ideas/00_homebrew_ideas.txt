@@ -1,0 +1,168 @@
+#reference for ez replacement/purging: gross0 handel0 galle0 flottenbasis0
+#reminder to check and replace vanilla tags/regions
+
+homebrew_highseas_ideas = {
+	category = DIP
+	
+	bonus = {
+		global_naval_barrage_cost = -1
+		disengagement_chance = 0.15
+	}
+	trigger = {
+		primitives = no
+	}
+	
+	naval_cadets = {
+		navy_tradition = 1
+		siege_blockade_progress = 1
+	}
+	homebrew_seaelftutelage = {
+		heavy_ship_power = 0.2
+		ship_durability = 0.1
+	}
+	homebrew_fingeronthepulse = {
+		global_sailors_modifier = 0.25
+		allowed_marine_fraction = 0.25
+	}
+
+	homebrew_marineracademies = {
+		leader_naval_shock = 1
+		leader_naval_fire = 1
+	}
+
+	homebrew_feywood = {
+		global_ship_cost = -0.1	
+		sunk_ship_morale_hit_recieved = -0.33
+	}
+	homebrew_merchantnavy = {
+		sailors_recovery_speed = 0.25
+		blockade_efficiency = 0.5
+	}
+	homebrew_signalspells = {
+		naval_morale = 0.1
+		global_naval_engagement_modifier = 0.1
+	}
+	
+	ai_will_do = {
+		factor = 1.0
+		modifier = {
+			factor = 0
+			NOT = { num_of_ports = 10 }
+				}
+#reminder to peruse for any trade-focused nations
+		modifier = {
+			factor = 5
+			OR = {
+			tag = A01 #Lorent
+			tag = A02 #Deranne
+			tag = A25 #Damescrown
+			tag = POR
+			tag = NED
+			tag = HOL
+			tag = BUR
+			}
+		}
+		modifier = {
+			factor = 15
+			tag = A47
+		}
+
+		#preexisting naval buildup
+		modifier = {
+			factor = 1.5
+			has_idea_group = maritime_ideas
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				num_of_heavy_ship = 10
+				heavy_ship_fraction = 0.25
+			}
+		}
+		modifier = { 
+			factor = 0
+			OR = {
+				has_reform = great_centaur_horde
+				has_reform = centaur_horde
+				has_reform = centaur_settled
+				}
+			}
+	
+	}
+}
+
+homebrew_amphibious_ideas = {
+	category = DIP
+	bonus = {
+		naval_morale = 0.2
+	}
+	trigger = {
+		mil_tech = 32
+		primitives = no
+		NOT = { has_idea_group = homebrew_highseas_ideas }
+	}
+	homebrew_marineracademies2 = {
+		global_sailors_modifier = 0.25
+		global_ship_cost = -0.1	
+	}
+	homebrew_orcishrowmen = {
+		galley_power = 0.3
+		gally_cost = -0.3
+		
+	}
+	homebrew_marinepropoganda = {
+		allowed_marine_fraction = 0.1
+	}
+
+	homebrew_overseasprojection = {
+		#add_cb = cb_coast
+	}
+
+	homebrew_merchantsfriend = {
+		trade_efficiency = 0.2
+	}
+	homebrew_boardingparties = {
+		capture_ship_chance = 0.2
+	}
+	homebrew_coastalformations = {
+		global_naval_engagement_modifier = 0.1
+	}
+	
+	ai_will_do = {
+		factor = 0.34
+		modifier = {
+			factor = 0
+			NOT = { num_of_ports = 10 }
+		}
+		#reminder to look up coastline tags outside of cannor
+		modifier = {
+			factor = 5
+			OR = {
+			tag = A47 #Eborthil
+			tag = A29 #Busilar
+			tag = Z08 #Bjarnrik
+			}
+		}
+		#preexisting naval buildup
+		modifier = {
+			factor = 1.5
+			has_idea_group = maritime_ideas
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				num_of_galley = 20
+				galley_fraction = 0.25
+			}
+		}
+		modifier = { 
+			factor = 0
+			OR = {
+				has_reform = great_centaur_horde
+				has_reform = centaur_horde
+				has_reform = centaur_settled
+				}
+			}
+		
+	}
+}

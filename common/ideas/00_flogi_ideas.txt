@@ -1,0 +1,1288 @@
+#religious group ideas have been purged by Jaddar
+	
+########################################################
+####### Judiciary / Justiz
+########################################################
+
+
+justiz0 = {
+	category = ADM
+
+	bonus = {
+		ae_impact = -0.15
+	}
+		
+	
+	justiz1 = {
+		legitimacy = 1
+		republican_tradition = 0.3
+		horde_unity = 1
+		devotion = 1
+		meritocracy = 1
+	}
+	justiz2 = {
+		yearly_corruption = -0.2
+	}
+	justiz3 = {
+		idea_cost = -0.1
+	}
+
+	justiz4 = {
+		trade_efficiency = 0.2
+	}
+	justiz5 = {
+		 attack_bonus_in_capital_terrain = yes
+	}
+	justiz6 = {
+		tolerance_heathen = 1
+		tolerance_heretic = 1
+	}
+	justiz7 = {
+		core_creation = -0.2
+		diplomatic_annexation_cost = -0.2
+	}
+	
+	ai_will_do = {
+		factor = 0.5
+		modifier = {
+			factor = 2
+			is_elector = yes 
+		}
+		modifier = {
+			factor = 4
+			is_emperor = yes 
+		}
+		modifier = {
+			factor = 5
+			is_part_of_hre = yes
+		}
+	}
+}
+
+########################################################
+####### Development / Entwicklung
+########################################################
+
+#purged b/c of overlap with AIG_infrastructure_ideas
+
+########################################################
+####### Health / Gesundheit
+########################################################
+
+
+gesundheit0 = {
+	category = ADM
+
+	bonus = {
+		global_unrest = -2
+	}
+	gesundheit1 = {
+		production_efficiency = 0.1
+	}
+	gesundheit2 = {
+		defensiveness = 0.3
+	}
+	gesundheit3 = {
+		global_manpower_modifier = 0.15
+	}
+
+	gesundheit4 = {
+		monarch_lifespan = 1.5
+	}
+	gesundheit5 = {
+		global_supply_limit_modifier = 0.66
+	}
+	gesundheit6 = {
+		idea_cost = -0.1
+	}
+	gesundheit7 = {
+		global_tax_modifier = 0.3
+	}
+	
+	ai_will_do = {
+		factor = 1.0
+	}
+}
+
+
+
+########################################################
+####### Großschiff / Heavy Ship Idea
+########################################################
+
+#heavy ship ideas have been merged with light ship ideas
+
+########################################################
+####### Galeerenidee / Galley Idea
+########################################################
+
+#galley ideas have been merged with naval base ideas
+
+########################################################
+####### Handelsschiff / Light Ship Ideas
+########################################################
+
+########################################################
+####### Colonial Empire / Kolonialimperium
+########################################################
+
+#see techlocked ideas
+
+########################################################
+####### Assimilation
+########################################################
+
+
+assimilation0 = {
+	category = DIP
+
+	bonus = {
+		diplomatic_reputation = 2
+	}
+		
+	assimilation1 = {
+		tolerance_heretic = 1
+		tolerance_heathen = 1
+	}
+	assimilation2 = {
+		diplomatic_annexation_cost = -0.2
+	}
+	
+	assimilation7 = {
+		global_manpower_modifier = 0.20
+	}
+
+	assimilation4 = {
+		years_of_nationalism = -10
+	}
+
+	homebrew_multiracial_draft = {
+		manpower_recovery_speed = 0.1
+	}
+	
+	assimilation5 = {
+		monthly_reform_progress_modifier = 0.3
+	}
+	
+	homebrew_melting_pot = {
+		num_accepted_cultures = 2
+	}
+
+	
+	ai_will_do = {
+		factor = 2.0
+		modifier = {
+			factor = 2
+			personality = ai_diplomat
+		}
+		modifier = {
+			factor = 3
+			OR = { #reminder to check for non-Cannorian melting pots
+				tag = A25 #Damescrown
+				tag = A38 #Anbenncost
+				tag = A44 #Esmaraine
+			}
+		}
+		
+	}
+}
+
+########################################################
+####### Nationalism / Nationalismus
+########################################################
+
+nationalismus0 = {
+	category = DIP
+
+	bonus = {
+		same_culture_advisor_cost = -0.15
+	}
+		
+	nationalismus1 = {
+		reinforce_speed = 0.2
+		reinforce_cost_modifier = -0.1
+	}
+
+	homebrew_x_for_xians = {
+		state_maintenance_modifier = -0.2
+	}
+
+	nationalismus4 = {
+		hostile_attrition = 1
+	}
+
+	nationalismus5 = {
+		culture_conversion_cost = -0.25
+	}
+	
+	nationalismus2 = {
+		global_autonomy = -0.05
+	}
+	
+	nationalismus6 = {
+		global_unrest = -2
+	}
+	
+	assimilation6 = {
+		manpower_in_own_culture_provinces = 0.15
+		manpower_in_accepted_culture_provinces = 0.15
+		manpower_in_culture_group_provinces = 0.15
+	}
+	
+	ai_will_do = {
+		factor = 1.0
+		modifier = {
+			factor = 0
+			xorme_nation_with_tolerance_trigger = yes
+		}
+		modifier = {
+			factor = 5.0
+			has_idea_group = theocracy_gov_ideas
+		}
+		modifier = {
+			factor = 5.0
+			has_idea_group = religious_ideas
+		}
+		modifier = {
+			factor = 3.5
+			xorme_aristocracy_idea_group_priority_trigger = yes
+		}
+	}
+}
+
+########################################################
+####### Society / Gesellschaft
+########################################################
+
+gesellschaft0 = {
+	category = DIP
+
+	bonus = {
+		advisor_cost = -0.10
+	}
+	gesellschaft1 = {
+		land_maintenance_modifier = -0.1
+	}
+	gesellschaft2 = {
+		improve_relation_modifier = 0.2
+	}
+	homebrew_efficient_state_laws = {
+		state_maintenance_modifier = -0.2
+	}
+	gesellschaft4 = {
+		global_unrest = -2
+	}
+	gesellschaft5 = {
+		global_spy_defence = 0.33
+	}
+	gesellschaft6 = {
+		diplomats = 1
+	}
+	homebrew_wildcard = {
+		possible_policy = 1
+	}
+	
+	ai_will_do = {
+		factor = 4.0
+		modifier = {
+			factor = 5.0
+			has_idea_group = stehendesheer0
+		}
+		modifier = {
+			factor = 25.0
+			OR = {
+				technology_group = tech_wood
+				technology_group = tech_east_elven
+				technology_group = tech_elven
+				tag = A32 #Ibevar
+			}
+		}
+	}
+}
+
+########################################################
+####### Propaganda
+########################################################
+
+
+propaganda0 = {
+	category = DIP
+
+	bonus = {
+		manpower_in_true_faith_provinces = 0.2
+	}
+	propaganda1 = {
+		years_of_nationalism = -5
+	}
+	propaganda2 = {
+		diplomatic_upkeep = 1
+	}
+	propaganda3 = {
+		power_projection_from_insults = 1
+	}
+
+	propaganda4 = {
+		diplomatic_upkeep = 1
+		move_capital_cost_modifier = -0.75
+	}
+	propaganda6 = {
+		ae_impact = -0.1
+	}
+	propaganda5 = {
+		monthly_reform_progress_modifier = 0.2
+	}
+	propaganda7 = {
+		stability_cost_modifier = -0.4
+	}
+	
+	ai_will_do = {
+		factor = 2.0
+		modifier = {
+			factor = 2.5
+			has_reform = theocratic_government
+		}
+		modifier = {
+			factor = 15.0
+			OR = {
+				technology_group = tech_wood
+				technology_group = tech_east_elven
+				technology_group = tech_elven
+				tag = A32 #Ibevar
+			}
+		}
+		modifier = {
+			factor = 5.0
+			has_idea_group = religious_ideas
+		}
+		modifier = {
+			factor = 5.0
+			has_idea_group = theocracy_gov_ideas
+		}
+		modifier = {
+			factor = 4.0
+			has_idea_group = stehendesheer0
+		}
+		modifier = {
+			factor = 4.0
+			has_idea_group = generalstab0
+		}
+	}
+}
+
+########################################################
+####### Fleet Base / Flottenbasis
+########################################################
+
+########################################################
+#######  Königreich Ideen / Kingdom Ideas
+########################################################
+
+
+konigreich0 = {
+	category = DIP
+
+	bonus = {
+		land_morale = 0.1
+	}
+		
+	trigger = {
+	mil_tech = 32
+			 OR = {
+			government_rank = 2
+			government_rank = 3 
+			is_emperor = yes 
+			}
+			
+	}
+	
+	konigreich1 = {
+		prestige_decay = -0.01
+		# <<WIKI>> decision = konigreich_dec
+	}
+
+
+	konigreich4 = {
+		institution_spread_from_true_faith = 0.3
+	}
+
+	konigreich5 = {
+		land_forcelimit_modifier  = 0.1
+		naval_forcelimit_modifier = 0.2
+	}
+	konigreich2 = {
+		expand_administration_cost = -0.2
+	}
+	konigreich6 = {
+		reinforce_cost_modifier = -0.1
+	}
+	konigreich3 = {
+		free_dip_policy = 1
+		possible_dip_policy = 1
+	}
+	konigreich7 = {
+		diplomatic_upkeep = 1
+		# <<WIKI>> add_cb = cb_herzog
+	}
+	
+	
+	
+	ai_will_do = {
+		factor = 1.0
+		modifier = {
+			factor = 1.5
+			has_idea_group = quantity_ideas
+		}
+		modifier = {
+			factor = 3.0
+			total_development = 500
+		}
+		modifier = {
+			factor = 5.0
+			total_development = 1000
+		}
+	}
+}
+
+########################################################
+####### Imperialism / Imperialismus
+########################################################
+
+
+imperialismus0 = {
+	category = DIP
+
+	bonus = {
+		governing_capacity_modifier = 0.15
+	}
+		
+	trigger = {
+		mil_tech = 32	
+		}
+	
+	
+	imperialismus1 = {
+		core_creation = -0.1
+	}
+	imperialismus2 = {
+		imperial_authority_value = 0.05
+		imperial_mandate = 0.05
+	}
+	imperialismus3 = {
+		prestige_decay = -0.01
+	}
+
+	imperialismus4 = {
+		global_tax_modifier = 0.15
+	}
+
+	imperialismus5 = {
+		naval_forcelimit_modifier = 0.2
+	}
+	imperialismus6 = {
+		land_forcelimit_modifier = 0.2
+	}
+	imperialismus7 = {
+		diplomatic_upkeep = 1
+		#adds subjugate cb
+	}
+	
+	ai_will_do = {
+		factor = 1.0
+		modifier = {
+			factor = 1.5
+			has_idea_group = quantity_ideas
+		}
+		modifier = {
+			factor = 3.0
+			total_development = 500
+		}
+		modifier = {
+			factor = 5.0
+			total_development = 1000
+		}
+	}
+}
+
+########################################################
+####### General Staff / Generalstab
+########################################################
+
+
+generalstab0 = {
+	category = MIL
+	trigger = {
+		mil_tech = 32	
+		}
+	bonus = {
+		free_leader_pool = 2
+	}
+		
+	generalstab1 = {
+		leader_land_shock = 1
+	}
+	generalstab2 = {
+		leader_land_fire = 1
+	}
+	generalstab3 = {
+		leader_land_manuever = 2
+	}
+
+	generalstab4 = {
+		leader_siege = 1
+	}
+
+	generalstab5 = {
+		leader_naval_fire = 1
+		leader_naval_shock = 1
+		leader_naval_manuever = 1
+	}
+	generalstab6 = {
+		yearly_army_professionalism = 0.005
+	}
+	generalstab7 = {
+		army_tradition = 1
+	}
+	
+	ai_will_do = {
+		factor = 4.0
+		modifier = {
+			factor = 5.0
+			has_idea_group = propaganda0
+		}
+		modifier = {
+			factor = 20.0
+			OR = {
+				technology_group = tech_wood
+				technology_group = tech_east_elven
+				technology_group = tech_elven
+				tag = A32 #Ibevar
+			}
+		}
+		modifier = {
+			factor = 1000
+			OR = {
+				tag = R62 #Command
+			}
+		}
+	}
+}
+
+########################################################
+####### Standing Army / Stehendes Heer
+########################################################
+
+
+stehendesheer0 = {
+	category = MIL
+
+	bonus = {
+		drill_decay_modifier = -0.3
+		land_forcelimit_modifier  = -0.25
+	}
+		
+	
+	stehendesheer1 = {
+		infantry_power = 0.1
+	}
+	stehendesheer2 = {
+		cavalry_power = 0.1
+	}
+	stehendesheer3 = {
+		artillery_power = 0.1
+	}
+	stehendesheer5 = {
+		drill_gain_modifier = 0.2
+	}
+	stehendesheer6 = {
+		free_mil_policy = 1
+		possible_mil_policy = 1
+	}
+	stehendesheer7 = {
+		siege_ability = 0.2
+	}
+	stehendesheer4 = {
+		discipline = 0.05
+	}
+	
+	ai_will_do = {
+		factor = 2.0
+		modifier = {
+			factor = 500.0
+			OR = {
+				technology_group = tech_wood
+				technology_group = tech_east_elven
+				technology_group = tech_elven
+				tag = A32 #Ibevar
+			}
+		}
+		modifier = {
+			factor = 2.0
+			has_country_modifier = xorme_ai_valid_nation
+		}
+		modifier = {
+			factor = 2.0
+			num_of_cities = 30
+		}
+		modifier = {
+			factor = 4.0
+			xorme_wealthy_region_trigger = yes
+		}
+		modifier = {
+			factor = 2.5
+			total_development = 100
+		}
+		modifier = {
+			factor = 2.0
+			NOT = { government_rank = 3 }
+			government_rank = 2
+		}
+		modifier = {
+			factor = 2.0
+			has_idea_group = innovativeness_ideas
+		}
+		modifier = {
+			factor = 2.0
+			has_idea_group = economic_ideas
+		}
+		modifier = {
+			factor = 4.0
+			has_idea_group = quality_ideas
+		}
+		modifier = {
+			factor = 4.0
+			has_idea_group = offensive_ideas
+		}
+		modifier = {
+			factor = 4.0
+			has_idea_group = propaganda0
+		}
+
+		modifier = {
+			factor = 25.0
+			xorme_quality_idea_group_priority_trigger = yes
+		}
+	}
+}
+
+########################################################
+####### Mercenary Army / Soldnerheer
+########################################################
+
+
+soldnerheer0 = {
+	category = MIL
+
+	bonus = {
+		mercenary_discipline = 0.05
+		adventurers_loyalty_modifier = 0.2 #Anbennar
+		adventurers_influence_modifier = 0.1
+	}
+		
+		trigger = {
+		OR = {
+			has_estate = estate_adventurers
+			has_adventurer_reform = yes
+			}
+		}
+	
+	soldnerheer2 = {
+		mercenary_cost = -0.2
+	}
+	soldnerheer1 = {
+		ae_impact = -0.2
+	}
+	soldnerheer3 = {
+		recover_army_morale_speed = 0.2
+		mercenary_manpower = 0.25
+	}
+
+	soldnerheer4 = {
+		merc_maintenance_modifier = -0.2
+	}
+
+	soldnerheer5 = {
+		trade_range_modifier = 0.25
+		# unlocks new merc companies
+	}
+	soldnerheer6 = {
+		army_tradition_from_battle = 1
+	}
+	soldnerheer7 = {
+		#remove professionalism malus from merc recruit
+	}
+
+	
+	ai_will_do = {
+		factor = 0.1
+		modifier = {
+			factor = 1.5
+			any_owned_province = {
+			is_capital = yes
+			OR = { #escanni adventurers
+				region = inner_castanor_region
+				region = south_castanor_region
+				region = west_castanor_region
+				}
+			}
+		}
+		modifier = {
+			factor = 1.5 #mercs and AE are important in EoA
+			is_part_of_hre = yes
+		}
+		modifier = {
+			factor = 100 #it'd be a little silly if they don't take this
+			has_country_modifier = halfling_military
+		}
+		modifier = {
+			factor = 8
+			government = republic
+		}
+		modifier = {
+			factor = 3.0
+			xorme_wealthy_region_trigger = yes
+		}
+		modifier = {
+			factor = 100.0
+			has_idea_group = plutocracy_ideas
+		}
+	}
+}
+
+########################################################
+####### Conscription / Wehrpflicht
+########################################################
+
+
+wehrpflicht0 = {
+	category = MIL
+	bonus = {
+		land_forcelimit_modifier = 0.15
+	}
+	
+	wehrpflicht3 = {
+		reinforce_speed = 0.2
+	}
+	wehrpflicht4 = {
+		reinforce_cost_modifier = -0.2
+	}
+	wehrpflicht1 = {
+		war_taxes_cost_modifier = -1
+	}
+	wehrpflicht2 = {
+		land_morale = 0.1
+	}
+	wehrpflicht6 = {
+		morale_damage_received = -0.05
+	}
+	wehrpflicht5 = {
+		army_tradition = 0.5
+	}
+	wehrpflicht7 = {
+		global_manpower_modifier = 0.15
+	}
+	
+	ai_will_do = {
+		factor = 2.0
+		modifier = {
+			factor = 7.0
+			has_idea_group = kriegsproduktion0
+		}
+		modifier = {
+			factor = 2.0
+			num_of_cities = 40
+		}
+		modifier = {
+			factor = 5.0
+			has_idea_group = quality_ideas
+		}
+		modifier = {
+			factor = 5.0
+			has_idea_group = waffenqualitat0
+		}
+		modifier = {
+			factor = 2.0
+			total_development = 300
+		}
+		modifier = {
+			factor = 2.5
+			total_development = 600
+		}
+		modifier = {
+			factor = 3.0
+			total_development = 900
+		}
+		modifier = {
+			factor = 5.0
+			is_great_power = yes
+		}
+		modifier = {
+			factor = 80.0
+			is_colonial_nation = yes
+		}
+	}
+}
+
+########################################################
+####### Weapons Quality / Waffenqualität
+########################################################
+
+
+waffenqualitat0 = {
+	category = MIL
+
+	bonus = {
+		discipline = 0.03
+	}
+	trigger = {	
+	mil_tech = 32	
+	}	
+	
+	waffenqualitat1 = {
+		global_trade_goods_size_modifier = 0.05
+	}
+	waffenqualitat2 = {
+		infantry_power = 0.1
+	}
+	waffenqualitat3 = {
+		cavalry_power = 0.1
+	}
+
+	waffenqualitat4 = {
+		merchants = 1
+	}
+
+	waffenqualitat5 = {
+		prestige = 1
+	}
+	waffenqualitat6 = {
+		drill_gain_modifier = 0.3
+	}
+	waffenqualitat7 = {
+		artillery_power = 0.1
+	}
+	
+	ai_will_do = {
+		factor = 2
+		modifier = {
+			factor = 5.0
+			has_idea_group = gesellschaft0
+		}
+		modifier = {
+			factor = 5.0
+			has_idea_group = wehrpflicht0
+		}
+		modifier = {
+			factor = 3.0
+			total_development = 300
+		}
+		modifier = {
+			factor = 4.5
+			total_development = 600
+		}
+		modifier = {
+			factor = 5.0
+			total_development = 900
+		}
+		modifier = {
+			factor = 4.0
+			is_great_power = yes
+		}
+	}
+}
+
+########################################################
+####### Fortress / Festung
+########################################################
+
+
+festung0 = {
+	category = MIL
+
+	bonus = {
+		garrison_size = 0.5
+		}
+
+	festung1 = {
+		defensiveness = 0.3
+	}
+	festung4 = {
+		fort_maintenance_modifier = -0.3
+		rival_border_fort_maintenance = -0.3
+	}
+	festung6 = {
+		shock_damage_received = -0.1
+	}
+	festung2 = {
+		land_morale = 0.1
+	}
+	festung5 = {
+		hostile_attrition = 2
+	}
+	festung3 = {
+		backrow_artillery_damage = 0.2
+	}
+	festung7 = {
+		reinforce_cost_modifier = -0.1
+	}
+	
+	ai_will_do = {
+		factor = 1
+		modifier = { #serpentspine has lots of choke points for forts
+			factor = 10
+			any_owned_province = {
+				is_capital = yes
+				continent = serpentspine
+			}
+		}
+		modifier = {
+			factor = 15
+			has_idea_group = defensive_ideas
+		}
+		modifier = {
+			factor = 30.0
+			xorme_defensive_idea_group_priority_trigger = yes
+		}
+	}
+}
+
+
+########################################################
+####### War Production / Kriegsproduktion
+########################################################
+
+###see techlocked ideas
+
+########################################################
+####### Public Administration / Staatsverwaltung 
+########################################################
+
+
+staatsverwaltung0 = {
+	category = ADM
+
+	bonus = {
+		possible_policy = 1
+	}	
+	staatsverwaltung1 = {
+		yearly_corruption = -0.1
+	}
+	staatsverwaltung2 = {
+		state_maintenance_modifier = -0.2
+	}
+	staatsverwaltung3 = {
+		caravan_power = 0.3
+	}
+	staatsverwaltung4 = {
+		governing_capacity_modifier = 0.3
+	}
+	staatsverwaltung6 = {
+		war_exhaustion = -0.03
+	}
+	staatsverwaltung5 = {
+		all_estate_loyalty_equilibrium = 0.05
+	}
+	staatsverwaltung7 = {
+		build_cost = -0.1
+	}
+	
+	ai_will_do = {
+		factor = 1.0
+		modifier = {
+			factor = 20.0
+			OR = {
+				technology_group = tech_wood
+				technology_group = tech_east_elven
+				technology_group = tech_elven
+				tag = A32 #Ibevar
+			}
+		}
+		modifier = {
+			factor = 1.5
+			has_idea_group = quantity_ideas
+		}
+		modifier = {
+			factor = 1.5
+			total_development = 500
+		}
+		modifier = {
+			factor = 2.0
+			total_development = 1000
+		}
+		modifier = {
+			factor = 2.0
+			has_reform = steppe_horde
+		}
+		modifier = {
+			factor = 2.5
+			governing_capacity_percentage = 0.8
+		}
+		modifier = {
+			factor = 2.5
+			government_rank = 3
+		}
+		modifier = {
+			factor = 3.0
+			is_great_power = yes
+		}
+		modifier = {
+			factor = 3.5
+			xorme_administrative_idea_group_priority_trigger = yes
+		}
+	}
+}
+
+########################################################
+####### Zentralismus Ideen / Centralism Ideas
+########################################################
+
+
+zentra0 = {
+	category = ADM
+
+	bonus = {
+		advisor_cost = -0.2
+		castonath_patricians_loyalty_modifier = 0.1
+	}
+	zentra5 = {
+		global_tax_modifier = 0.25
+	}
+	zentra1 = {
+		build_cost = -0.1
+	}
+	zentra2 = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	zentra4 = {
+		diplomatic_annexation_cost = -0.15
+	}
+	zentra7 = {
+		state_maintenance_modifier = -0.3
+	}
+	zentra6 = {
+		free_policy = 1
+	}
+	zentra3 = {
+		country_admin_power = 1
+		global_prosperity_growth = 0.25
+	}
+	
+	ai_will_do = {
+		factor = 0.15
+		modifier = {
+			factor = 2
+			OR { #good at dev and/or bad at expansion
+					has_country_modifier = gnomish_administration
+					has_country_modifier = dwarven_administration
+			}
+		}
+		modifier = {
+			factor = 2
+			AND = { #already invested into dev and aren't a big boi
+				full_idea_group = economic_ideas
+				NOT = { num_of_cities = 31 }
+			}
+		}
+		modifier = {
+			factor = 5
+			is_part_of_hre = yes
+		}
+	}
+}
+
+########################################################
+####### Dezentralismus Ideen / Decentralism Ideas
+########################################################
+
+
+dezentra0 = {
+	category = ADM
+
+	bonus = {
+		governing_capacity_modifier = 0.2
+	}
+		
+	
+	dezentra1 = {
+		global_trade_goods_size_modifier = 0.075
+	}
+	dezentra2 = {
+		tolerance_heretic = 1.5
+		tolerance_heathen = 1.5
+	}
+	dezentra3 = {
+		min_autonomy_in_territories = -0.20
+	}
+
+	dezentra4 = {
+		idea_cost = -0.05
+		global_institution_spread = 0.2
+	}
+
+	dezentra5 = {
+		administrative_efficiency = 0.05
+	}
+	dezentra6 = {
+		global_manpower_modifier = 0.2
+		global_sailors_modifier = 0.2
+	}
+	dezentra7 = {
+		global_prov_trade_power_modifier = 0.2
+	}
+	
+	ai_will_do = {
+		factor = 0.5
+		modifier = {
+			factor = 4.0
+			num_of_cities = 25
+		}
+		modifier = {
+			factor = 8.0
+			num_of_cities = 50
+		}
+		modifier = {
+			factor = 2
+			total_development = 600
+		}
+		modifier = {
+			factor = 3
+			total_development = 900
+		}
+		modifier = {
+			factor = 5
+			is_great_power = yes
+		}
+		modifier = {
+			factor = 10.0
+			is_colonial_nation = yes
+		}
+	}
+}
+
+########################################################
+####### Taktik Ideen / Tactics Ideas
+########################################################
+
+
+formation0 = {
+	category = MIL
+
+	bonus = {
+		leader_land_manuever = 2
+	}
+	trigger = {
+		NOT = { 
+			any_owned_province = {
+				is_capital = yes
+				OR = { 
+					continent = serpentspine
+					continent = africa
+				}
+			}
+		}
+	}
+	
+	formation1 = {
+		movement_speed = 0.15
+	}
+	formation2 = {
+		shock_damage = 0.1
+	}
+	formation3 = {
+		cavalry_power = 0.2
+	}
+
+	formation4 = {
+		shock_damage_received = -0.05
+	}
+
+	formation5 = {
+		leader_land_shock = 2
+	}
+	formation6 = {
+		land_attrition = -0.2
+	}
+	formation7 = {
+		fire_damage_received = -0.1
+	}
+	
+	ai_will_do = {
+		factor = 3.0
+		modifier = {
+			factor = 20.0
+			has_idea_group = aristocracy_ideas
+		}
+		modifier = {
+			factor = 100
+			OR = {
+				has_reform = great_centaur_horde
+				has_reform = centaur_horde
+				has_reform = centaur_settled
+				tag = B36 #Marhold
+			}
+		
+		}
+	}
+}
+
+########################################################
+####### Militarismus Ideen / Militarism Ideas
+########################################################
+
+
+militarismus0 = {
+	category = MIL
+	trigger = {
+		mil_tech = 32	
+		}
+	bonus = {
+		free_mil_policy = 1
+	}
+		
+	
+	militarismus1 = {
+		land_morale = 0.2
+	}
+	militarismus2 = {
+		war_exhaustion = -0.03
+	}
+	militarismus3 = {
+		movement_speed = 0.1
+		land_attrition = -0.2
+	}
+
+	militarismus4 = {
+		leader_land_shock = 1
+	}
+
+	militarismus5 = {
+		global_garrison_growth = 0.25
+		garrison_size = 0.25	
+	}
+	militarismus6 = {
+		reinforce_cost_modifier = -0.1
+		global_supply_limit_modifier = 0.2
+	}
+	militarismus7 = {
+		#grants +2% shock damage for every cored mage tower
+		mages_influence_modifier = 0.05
+	}
+	
+	ai_will_do = {
+		factor = 1.0
+	}
+}
+
+########################################################
+####### Shock Fokus Ideen / Shock Focus Ideas
+########################################################
+
+#see techlocked ideas
+
+########################################################
+####### Feuer Fokus Ideen / Fire Focus Ideas
+########################################################
+
+#see techlocked ideas
+
+
+

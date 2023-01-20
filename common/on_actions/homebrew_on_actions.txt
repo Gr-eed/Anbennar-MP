@@ -1,0 +1,18 @@
+
+on_bi_yearly_pulse = {
+	events = {
+		#homebrew cleanup, set to pulse to reduce lag.
+		homebrew.12
+		homebrew.13
+		homebrew.15
+		homebrew.17
+		homebrew.19
+		homebrew.21
+		homebrew.23
+		homebrew.26
+		homebrew.31
+		homebrew.42
+		homebrew.50
+
+	}
+}

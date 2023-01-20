@@ -1,0 +1,324 @@
+AIG_serpentspine_ideas = {
+	category = MIL
+	bonus = {
+		defensiveness = 0.25
+	}
+	trigger = {
+		any_owned_province = {
+			is_capital = yes
+			continent = serpentspine
+		}
+	}
+	AIG_dwarven_citadels = {
+		#fort level +1 in serpentspine
+	}
+	AIG_hostile_ground = {
+		land_attrition = -0.2
+	}
+	AIG_your_last_stand = {
+		war_exhaustion = -0.03
+		garrison_size = 0.30
+	}
+	AIG_serpentsbeat = {
+		#movement_speed = 0.2 on has_terrain = dwarven_road
+	}
+	AIG_under_fire = {
+		fire_damage_received = -0.075
+	}
+	AIG_make_your_bullets_count = {
+		backrow_artillery_damage = 0.1
+	}
+	AIG_push_them_back = {
+		army_tradition = 0.5
+	}
+	ai_will_do = {
+		factor = 0.5
+
+		modifier = {
+			factor = 5
+			OR = {
+				technology_group = tech_dwarven #born underground, suckled from a teat of stone
+			}
+		}
+	}
+}
+AIG_magocratic_ideas = {
+	category = DIP
+	bonus = {
+		all_power_cost = -0.025
+		mages_loyalty_modifier = 0.1 #anbennar
+		tec_technomancy_influence = 0.05
+	}
+	trigger = {
+		has_estate = estate_mages
+	}
+	AIG_loyal_mages = {
+		stability_cost_modifier = -0.3
+	}
+	AIG_mage_archives = {
+		#+25% study exp
+	}
+	AIG_wizard_tax = {
+		global_tax_modifier = 0.4
+	}
+	AIG_magisterium_ties = {
+		diplomatic_upkeep = 1
+		diplomatic_reputation = 1
+	}
+	AIG_battlemage_battalions = {
+		mercenary_discipline = 0.05
+	}
+	AIG_scriers = {
+		spy_offence = 0.33
+		global_spy_defence = 0.2
+	}
+	AIG_ascended_bloodline = {
+		monarch_lifespan = 0.5
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+monstrous_ideas = {
+	category = DIP
+	bonus = {
+		idea_cost = -0.2
+		monstrous_tribes_loyalty_modifier = 0.1 #anbennar
+	}
+	trigger = {
+		has_country_modifier = monstrous_nation
+	}
+	AIG_war_economy = {
+		available_province_loot = 0.66
+		loot_amount = 0.66
+	}
+	AIG_conquered_bureaucrats = {
+		years_of_nationalism = -10
+	}
+	AIG_your_mom = {
+		power_projection_from_insults = 1.5
+	}
+	AIG_black_market = {
+		inflation_reduction = 0.2
+	}
+	AIG_brain_drain = {
+		global_autonomy = -0.1
+	}
+	AIG_horde_of_the_seas = {
+		privateer_efficiency = 0.25
+		may_perform_slave_raid = yes
+	}
+	AIG_cult_of_personality = {
+		max_absolutism = 20
+	}
+	ai_will_do = {
+		factor = 2.0
+
+		modifier = {
+			factor = 5.0
+			OR = {
+				technology_group = tech_east_orcish
+				technology_group = tech_harpy
+				technology_group = tech_centaur
+				technology_group = tech_gnollish
+				tag = U07 #Viakkoc
+			}
+		}
+	}
+}
+
+AIG_infrastructure_ideas = {
+	category = ADM
+	bonus = {
+		free_adm_policy = 1
+		possible_adm_policy = 1
+	}
+
+	AIG_ideas_spread = {
+		global_institution_spread = 0.2
+	}
+	AIG_sea_lanes = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	AIG_canal_network = {
+		caravan_power = 0.30
+		global_own_trade_power = 0.3
+	}
+	AIG_mining_regulations = {
+		monthly_gold_inflation_modifier = -0.5
+		#changes meteriote/precursor ruin events
+	}
+	AIG_emergency_responders = {
+		global_unrest = -2
+	}
+	AIG_golden_highway = {
+		trade_efficiency = 0.2
+	}
+	AIG_rural_industries = {
+		build_cost = -0.1
+		#build cost = -0.1, dev cost -0.2, and +1 building slot in rough terrain
+		#dwarven holds and urban terrain are exceptions
+		#for obvious reasons
+	}
+	ai_will_do = {
+		factor = 0
+		}
+	}
+AIG_elven_supremacy_ideas = {
+	category = ADM
+	bonus = {
+		cb_on_religious_enemies = yes
+		church_loyalty_modifier = 0.2
+	}
+	trigger = {
+		AND = {
+			has_country_modifier = elven_administration
+			NOT = { dominant_religion = the_jadd }
+			NOT = { has_idea_group = religous_ideas }
+		}
+	}
+	AIG_elven_forebears = {
+		prestige = 1
+	}
+	AIG_reclaiming_birthright = {
+		missionaries = 1
+	}
+	AIG_holy_orders = {
+		global_missionary_strength = 0.03
+	}
+	AIG_seniority_rule = {
+		max_absolutism = 20
+	}
+	AIG_police_state = {
+		years_of_nationalism = -5
+		global_spy_defence = 0.25
+	}
+	AIG_ethnic_primacy = {
+		culture_conversion_cost = -0.3
+	}
+	AIG_expand_elven_conscription = {
+		manpower_in_own_culture_provinces = 0.4
+	}
+	ai_will_do = {
+		factor = 3.0
+		modifier = {
+			factor = 0
+			has_idea_group = humanist_ideas
+		}
+		modifier = {
+			factor = 1.33
+			NOT = { religious_unity = 0.9 }
+		}
+		modifier = {
+			factor = 1.4
+			NOT = { religious_unity = 0.8 }
+		}
+		modifier = {
+			factor = 2.25
+			NOT = { religious_unity = 0.7 }
+		}
+		modifier = {
+			factor = 4
+			OR = {
+				tag = A21 #Venail
+				tag = Z43 #Aelnar
+				tag = A32 #Ibevar
+			}
+		}
+	}
+}
+
+AIG_imperial_ideas = {
+	category = DIP
+	bonus = {
+		imperial_authority_value = 0.05
+	}
+	trigger = {
+		mil_tech = 32
+	}
+	AIG_a_velvet_glove = {
+		diplomatic_reputation = 1
+		accept_vassalization_reasons = 10
+	}
+	AIG_citadel_research = {
+		defensiveness = 0.2
+		great_project_upgrade_cost = -0.1
+	}
+	AIG_dameshead_trade = {
+		trade_efficiency = 0.1
+	}
+	AIG_racial_representation = {
+		global_unrest = -1
+		global_autonomy = -0.025
+	}
+	AIG_boat_party_diplo = {
+		diplomats = 1
+	}
+	AIG_imperial_cities = {
+		#+0.75 goods produced on urban and dwarven holds
+		#maybe nerf to 0.5, wait for feedback
+	}
+	AIG_efficient_beaurocracy = {
+		vassal_forcelimit_bonus = 0.5
+	}
+	ai_will_do = {
+		factor = 0.34
+
+		modifier = {
+			factor = 3
+			OR = {
+				tag = A30 #Wex
+				tag = A45 #Istralore
+				tag = A04 #Wesdam
+				tag = A58 #Dameria
+				tag = A11 #Pearlsedge
+			}
+		}
+	}
+}
+AIG_legionary_ideas = {
+	category = MIL
+	bonus = {
+		discipline = 0.03
+	}
+	trigger = {
+		any_owned_province = {
+			is_capital = yes
+			continent = africa
+		}
+	}
+	AIG_phlanx_formation = {
+		shock_damage_received = -0.1
+	}
+	AIG_infantry_en_masse = {
+		infantry_cost = -0.10
+		infantry_power = 0.1
+	}
+	AIG_foreign_auxilleries = {
+		merc_maintenance_modifier = -0.2
+		mercenary_manpower = 0.3
+	}
+	AIG_centralising_our_base = {
+		reduced_liberty_desire_on_same_continent = 10
+		establish_order_cost = -0.30
+	}
+	AIG_sun_elf_battlemages = {
+		shock_damage = 0.1
+	}
+	AIG_administering_the_fringes = {
+		global_autonomy = -0.05
+	}
+	AIG_always_on_campaign = {
+		army_tradition_decay = -0.01
+	}
+	ai_will_do = {
+		factor = 10
+
+		modifier = {
+			factor = 3
+			OR = {
+				technology_group = tech_bulwari
+			}
+		}
+	}
+}

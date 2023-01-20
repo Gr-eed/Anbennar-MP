@@ -1,0 +1,275 @@
+country_decisions = {
+
+	homebrew_factory_town_start = {
+	potential = {
+		has_idea_group = AIG_industrial_ideas
+		NOT = { has_country_flag = factory_town_start }
+		}
+	allow = {
+		has_idea = AIG_factory_towns
+		}
+	effect = {
+		set_country_flag = factory_town_start
+		every_owned_province = {
+			limit = {
+				has_manufactory_trigger = yes		
+			}
+			add_province_modifier = {
+			name = "factory_town"
+			duration = -1
+				}
+			}	
+		}
+	ai_will_do = {
+		factor = 1
+		}
+	}
+	
+	homebrew_rural_industry_update = {
+	potential = {
+		has_idea_group = AIG_infrastructure_ideas
+		}
+	allow = {
+		has_idea = AIG_rural_industries
+		}
+	effect = {
+		set_country_flag = rural_industry_update
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_terrain = glacier
+					has_terrain = forest
+					has_terrain = gladeway
+					has_terrain = hills
+					has_terrain = woods
+					has_terrain = mountain
+					has_terrain = jungle
+					has_terrain = marsh
+					has_terrain = highlands
+					has_terrain = cavern
+					has_terrain = mushroom_forest_terrain
+					has_terrain = dwarven_road
+					has_terrain = ancient_forest
+				}		
+			}
+			add_province_modifier = {
+			name = "rural_industry"
+			duration = -1
+				}
+			}
+		}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			has_country_modifier = rural_industry_update
+			}
+		}
+	}
+	
+	
+	homebrew_conscription_start = {
+	potential = {
+		has_idea_group = militarismus0
+		NOT = { has_country_flag = conscription_start }
+		}
+	allow = {
+		has_idea = militarismus6
+		}
+	effect = {
+		set_country_flag = conscription_start
+		every_owned_province = {
+			if = {
+			limit = {
+				has_building = conscription_center		
+			}
+			add_province_modifier = {
+			name = "conscription2"
+			duration = -1
+					}
+				}
+			else_if = {
+			limit = {
+				has_building = regimental_camp	
+			}
+			add_province_modifier = {
+			name = "conscription1"
+			duration = -1
+					}
+				}
+			}			
+		}
+	ai_will_do = {
+		factor = 1
+		}
+	}
+	
+
+	
+	homebrew_urbanindustry_start = {
+	potential = {
+		has_idea_group = AIG_imperial_ideas
+		NOT = { has_country_flag = urbanindustry_start }
+		}
+	allow = {
+		has_idea = AIG_imperial_cities
+		}
+	effect = {
+		set_country_flag = urbanindustry_start
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_terrain = dwarven_hold
+					has_terrain = dwarven_hold_surface
+					has_terrain = city_terrain
+				}
+			}
+			add_province_modifier = {
+			name = "urban_industry"
+			duration = -1
+				}
+			}
+		}
+	ai_will_do = { factor = 1 }
+	}
+	
+	homebrew_mining_regulations_start = {
+	potential = {
+		has_idea_group = AIG_infrastructure_ideas
+		NOT = { has_country_flag = mining_regulations_start }
+		}
+	allow = {
+		has_idea = AIG_mining_regulations
+		}
+	effect = {
+		set_country_flag = mining_regulations_start
+		every_owned_province = {
+			if = {
+			limit = {
+				trade_goods = damestear
+				has_province_modifier = damestear_rich_deposit		
+			}
+			remove_province_modifier = damestear_rich_deposit
+			add_province_modifier = {
+			name = "homebrew_mining_regulations_damestear"
+			duration = -1
+					}
+				hidden_effect = {
+					REB = {
+						change_variable = {
+							which = homebrew_permadamestear
+							value = 1
+						}
+					}
+				}
+			}
+			else_if = {
+			limit = {
+				trade_goods = damestear		
+			}
+			set_province_flag = homebrew_permanent_damestear
+			hidden_effect = {
+				REB = {
+					change_variable = {
+						which = homebrew_permadamestear
+						value = 1
+						}
+					}
+				}
+			}
+			if = {
+			limit = {
+				trade_goods = precursor_relics
+				has_province_modifier = pr_great_ruin	
+				NOT = { has_province_modifier = eordan_expedition_site }
+			}
+			remove_province_modifier = pr_great_ruin
+			add_province_modifier = {
+				name = "homebrew_mining_regulations_relic"
+				duration = -1
+				}
+			}
+			else_if = {
+			limit = {
+				trade_goods = precursor_relics
+			}
+			set_province_flag = permanent_precursor_relics
+				}
+			}	
+		}
+	ai_will_do = {
+		factor = 1
+		}
+	}
+	
+	#sign nurael convention
+	nurael_convention_start = {
+		potential = {
+			has_country_flag = initialized_nurael_convention
+			NOT = { has_country_flag = nurael_convention }
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			set_country_flag = nurael_convention
+			remove_country_modifier = nurael_suggestion
+		}
+		ai_will_do = {
+		factor = 1
+			modifier = {
+			factor = 0
+			has_country_modifier = chief_artificer
+			}
+		}
+	}
+	
+	nurael_convention_end = {
+		potential = {
+			has_country_flag = nurael_convention
+			NOT = { has_country_modifier = nurael_suggestion }
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			add_stability = -1
+			add_country_modifier = {
+				name = nurael_suggestion
+				duration = -1
+				}
+			clr_country_flag = nurael_convention
+		}
+		ai_will_do = {
+		factor = 1
+			modifier = {
+			factor = 0
+			NOT = { has_country_modifier = chief_artificer }
+			}
+		}
+	}
+	
+
+	#update wildcard
+	homebrew_wildcard_update = {
+	potential = {
+		has_idea_group = gesellschaft0
+		has_country_flag = wildcard_start
+		}
+	allow = {
+		has_idea = homebrew_wildcard
+		custom_trigger_tooltip = { 
+			tooltip = wildcard_cooldown_tt 
+			had_country_flag = { flag = wildcard_cooldown days = 3650 } 
+			}
+		}
+	effect = {
+		clr_country_flag = wildcard_cooldown
+		country_event = { id = homebrew.41 days = 1 }
+		}
+	ai_will_do = {
+			factor = 1
+		}
+	}
+	
+} #end of file

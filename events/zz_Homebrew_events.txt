@@ -1,0 +1,2168 @@
+namespace = homebrew
+#gamer move
+province_event = {
+	id = homebrew.2
+	title = homebrew.2.t
+	desc = homebrew.2.d
+	picture = ARTWORK_eventPicture
+	
+	is_triggered_only = yes
+	hidden = yes
+	
+	trigger = {
+		is_city = yes
+		NOT = { has_province_modifier = serpent_rot_3 }
+		owner = { 
+			NOT = { has_country_flag = gamer_move } 
+		}
+	}
+	
+	option = {
+        name = homebrew.2.1
+        ai_chance = { factor = 100 }
+		random_list = {
+		10 = { add_base_tax = -1 }
+		10 = { add_base_production = -1 }
+		10 = { add_base_manpower = -1 }
+		}
+		remove_province_modifier = serpent_cure
+		set_province_flag = serpentrot3
+		add_permanent_province_modifier = {
+			name = serpent_rot_3
+			duration = -1
+		}
+		add_devastation = 10
+		province_event = { id = homebrew.3	days = 1825 }
+	}
+}
+#gamer move recovery
+province_event = {
+	id = homebrew.3
+	title = homebrew.3.t
+	desc = homebrew.3.d
+	picture = ARTWORK_eventPicture
+	hidden = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = homebrew.3.1
+		clr_province_flag = serpentrot3
+		add_permanent_province_modifier = {
+		name = serpent_cure
+		duration = 1825
+		}
+	}
+}
+#enable nurael convention
+#set to bi-yearly pulse
+country_event = {
+
+	id = homebrew.4
+	title = homebrew.4.t
+	desc = homebrew.4.d
+	picture = PROTESTANT_CATHOLIC_DEBATE_eventPicture
+	fire_only_once = yes
+	major = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_religion_enabled = ravelian
+		owns_core_province = 351 #Nurael 
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	immediate = {
+		set_global_flag = nurael_convention_global
+		set_country_flag = initialized_nurael_convention
+		hidden_effect = {
+			every_country = {
+				country_event = { id = homebrew.5 }
+			}
+		}
+	}
+
+	option = {
+		name = "homebrew.4.1"
+		add_dip_power = 100
+	}
+}	
+
+
+#remove dwarven citadel
+province_event = {
+
+	id = homebrew.7
+	title = homebrew.7.t
+	desc = homebrew.7.d
+	hidden = yes
+	picture = POPE_PREACHING_eventPicture
+	
+	is_triggered_only = yes
+		
+	trigger = {
+		has_province_modifier = dwarven_citadel
+		OR = {
+			ROOT = {
+				NOT = { has_idea = AIG_dwarven_citadels }
+			}
+			NOT = {
+				OR = {
+					is_capital = yes
+					has_building = fort_15th
+					has_building = fort_16th
+					has_building = fort_17th
+					has_building = fort_18th
+					has_building = ramparts
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = "homebrew.7.1"
+		remove_province_modifier = dwarven_citadel
+	}
+}
+#serpentsbeat
+#see decisions
+#remove dwarven citadels
+country_event = {
+
+	id = homebrew.12
+	title = homebrew.12.t
+	desc = homebrew.12.d
+	hidden = yes
+	picture = POPE_PREACHING_eventPicture
+	
+	is_triggered_only = yes
+		
+	trigger = {
+		NOT = { has_idea = AIG_dwarven_citadels }
+		any_owned_province = {
+			has_province_modifier = dwarven_citadel
+		}
+	}
+	
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = "homebrew.12.1"
+		clr_country_flag = dwarf_citadel_start
+		every_owned_province = {
+			remove_province_modifier = dwarven_citadel
+		}
+	}
+}	
+#remove serpentsbeat
+country_event = {
+
+	id = homebrew.13
+	title = homebrew.13.t
+	desc = homebrew.13.d
+	hidden = yes
+	picture = POPE_PREACHING_eventPicture
+	
+	is_triggered_only = yes
+		
+	trigger = {
+		NOT = { has_idea = AIG_serpentsbeat }
+		any_owned_province = {
+		has_province_modifier = serpentsbeat
+		}
+	}
+	
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = "homebrew.13.1"
+		every_owned_province = {
+			remove_province_modifier = serpentsbeat
+		}
+	}
+}	
+#add bionic implants
+country_event = {
+
+	id = homebrew.14
+	title = homebrew.14.t
+	desc = homebrew.14.d
+	hidden = yes
+	picture = POPE_PREACHING_eventPicture
+		
+	trigger = {
+		has_idea = AIG_bionic_implants
+		NOT = { has_country_modifier = bionic_implants }
+	}
+
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = "homebrew.14.1"
+		add_country_modifier = { 
+			name = bionic_implants
+			duration = -1
+		}
+	}
+}
+#remove bionic implants
+country_event = {
+
+	id = homebrew.15
+	title = homebrew.15.t
+	desc = homebrew.15.d
+	hidden = yes
+	picture = POPE_PREACHING_eventPicture
+	
+	is_triggered_only = yes
+		
+	trigger = {
+		NOT = { has_idea = AIG_bionic_implants }
+		has_country_modifier = bionic_implants
+	}
+
+
+	
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = "homebrew.15.1"
+		remove_country_modifier = bionic_implants
+		
+	}
+}
+#add rural industry
+#see decisions
+#remove rural industry
+country_event = {
+	id = homebrew.17
+	title = homebrew.17.t
+	desc = homebrew.17.d
+	hidden = yes
+	picture = POPE_PREACHING_eventPicture	
+	is_triggered_only = yes
+	trigger = {
+		NOT = { has_idea = AIG_rural_industries }
+		any_owned_province = {
+		has_province_modifier = rural_industry
+		}
+	}
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "homebrew.17.1"
+		every_owned_province = {
+			remove_province_modifier = rural_industry
+		}
+	}
+}
+#add smart armor
+country_event = {
+
+	id = homebrew.18
+	title = homebrew.18.t
+	desc = homebrew.18.d
+	hidden = yes
+	picture = POPE_PREACHING_eventPicture
+		
+	trigger = {
+		has_idea = AIG_smart_armor
+		NOT = { has_country_modifier = smart_armor }
+	}
+		mean_time_to_happen = { days = 1 }
+	option = {
+		name = "homebrew.18.1"
+		add_country_modifier = { 
+			name = smart_armor
+			duration = -1
+		}
+	}
+}
+#remove smart armor
+country_event = {
+
+	id = homebrew.19
+	title = homebrew.19.t
+	desc = homebrew.19.d
+	hidden = yes
+	picture = POPE_PREACHING_eventPicture
+	
+	is_triggered_only = yes
+		
+	trigger = {
+		NOT = { has_idea = AIG_smart_armor }
+		has_country_modifier = smart_armor
+	}
+
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = "homebrew.19.1"	
+		remove_country_modifier = smart_armor	
+	}
+}
+#add evocation drones
+country_event = {
+
+	id = homebrew.20
+	title = homebrew.20.t
+	desc = homebrew.20.d
+	hidden = yes
+	picture = POPE_PREACHING_eventPicture
+		
+	trigger = {		
+		has_idea = AIG_evocation_drones
+		NOT = { has_country_modifier = evocation_drones }
+	}
+	
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = "homebrew.20.1"	
+		add_country_modifier = { 
+			name = evocation_drones
+			duration = -1
+		}
+	}
+}
+#remove evocation drones
+country_event = {
+
+	id = homebrew.21
+	title = homebrew.21.t
+	desc = homebrew.21.d
+	hidden = yes
+	picture = POPE_PREACHING_eventPicture
+	
+	is_triggered_only = yes
+		
+	trigger = {
+		NOT = { has_idea = AIG_evocation_drones }
+		has_country_modifier = evocation_drones
+	}
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "homebrew.21.1"
+		remove_country_modifier = evocation_drones
+	}
+}
+#add spell exp
+country_event = {
+
+	id = homebrew.22
+	title = homebrew.22.t
+	desc = homebrew.22.d
+	hidden = yes
+	picture = POPE_PREACHING_eventPicture
+		
+	trigger = {
+		has_idea = AIG_mage_archives
+		NOT = { has_country_flag = mage_archive_intialization }
+	}
+		mean_time_to_happen = { days = 1 }
+	option = {
+		name = "homebrew.22.1"
+		set_country_flag = mage_archive_intialization
+		change_variable = {
+			which = experienceModifier
+			value = 25
+		}
+	}
+}
+#remove spell exp
+country_event = {
+
+	id = homebrew.23
+	title = homebrew.23.t
+	desc = homebrew.23.d
+	hidden = yes
+	picture = POPE_PREACHING_eventPicture
+	
+	is_triggered_only = yes
+		
+	trigger = {
+		NOT = { has_idea = AIG_mage_archives }
+		has_country_flag = mage_archive_intialization
+	}
+
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = "homebrew.23.1"	
+		clr_country_flag = mage_archive_intialization
+		subtract_variable = {
+			which = experienceModifier
+			value = 25
+		}
+	}
+}
+#add emergency exit
+country_event = {
+
+	id = homebrew.25
+	title = homebrew.25.t
+	desc = homebrew.25.d
+	hidden = yes
+	picture = POPE_PREACHING_eventPicture
+		
+	trigger = {		
+		has_idea = AIG_emergency_exit
+		NOT = { has_country_modifier = emergency_exit }
+	}
+	
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = "homebrew.25.1"	
+		add_country_modifier = { 
+			name = emergency_exit
+			duration = -1
+		}
+	}
+}
+#remove emergency exit
+country_event = {
+
+	id = homebrew.26
+	title = homebrew.26.t
+	desc = homebrew.26.d
+	hidden = yes
+	picture = POPE_PREACHING_eventPicture
+	
+	is_triggered_only = yes
+		
+	trigger = {
+		NOT = { has_idea = AIG_emergency_exit }
+		has_country_modifier = emergency_exit
+	}
+	mean_time_to_happen = { days = 1 }
+	option = {
+		name = "homebrew.26.1"
+		remove_country_modifier = emergency_exit
+	}
+}
+#remove mining regulations
+country_event = {
+
+	id = homebrew.31
+	title = homebrew.31.t
+	desc = homebrew.31.d
+	hidden = yes
+	picture = POPE_PREACHING_eventPicture
+	
+	is_triggered_only = yes
+		
+	trigger = {
+		NOT = { has_idea = AIG_mining_regulations }
+		any_owned_province = {
+			OR = {
+				has_province_modifier = homebrew_mining_regulations_damestear
+				has_province_modifier = homebrew_mining_regulations_relic
+			}
+		}
+	}
+
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = "homebrew.31.1"
+		clr_country_flag = mining_regulations_start
+		every_owned_province = {
+			if = {
+				limit = { has_province_modifier = homebrew_mining_regulations_damestear }
+				remove_province_modifier = homebrew_mining_regulations_damestear
+				add_permanent_province_modifier = {
+					name = damestear_rich_deposit
+					duration = -1
+				}
+				REB = {
+					change_variable = {
+						which = homebrew_permadamestear
+						value = -1
+					}
+				}
+			}
+			if = {
+				limit = { has_province_modifier = homebrew_mining_regulations_relic }
+				remove_province_modifier = homebrew_mining_regulations_relic
+				add_permanent_province_modifier = {
+					name = pr_great_ruin
+					duration = -1
+				}
+			}
+			if = {
+				limit = { has_province_flag = homebrew_permanent_damestear }
+				clr_province_flag = homebrew_permanent_damestear
+				REB = {
+					change_variable = {
+						which = homebrew_permadamestear
+						value = -1
+					}
+				}
+			}
+			if = {
+				limit = { has_province_flag = homebrew_permanent_precursor_relics }
+				clr_province_flag = homebrew_permanent_precursor_relics
+			}
+		}
+	}
+}
+
+#wildcard initialization
+#note: fuck me, this took forever to write. This is literally what caused me to add a scripted effects file.
+country_event = {
+
+	id = homebrew.40
+	title = homebrew.40.t
+	desc = homebrew.40.d
+	picture = BIG_BOOK_eventPicture
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = { days = 1 }
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = wildcard_cooldown
+		}
+	}
+
+	option = { #corin take the wheel
+		name = "homebrew.41.b"
+		highlight = yes
+		ai_chance = { factor = 100 }
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+		random_wildcard = yes
+	}
+	option = { #random adm
+		name = "homebrew.41.c"
+		highlight = yes
+		ai_chance = { factor = 0 }
+		add_adm_power = 50
+		random_wildcard_adm = yes
+	}
+	option = { #random dip
+		name = "homebrew.41.f"
+		highlight = yes
+		ai_chance = { factor = 0 }
+		add_dip_power = 50
+		random_wildcard_dip = yes
+	}
+	option = { #random mil
+		name = "homebrew.41.e"
+		highlight = yes
+		ai_chance = { factor = 0 }
+		add_mil_power = 50
+		random_wildcard_mil = yes
+	}
+	#list
+	option = {
+		name = "homebrew.41.1"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_tax
+		add_country_modifier = {
+			name = wildcard_tax
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.2"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_production
+		add_country_modifier = {
+			name = wildcard_production
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.3"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_inflation
+		add_country_modifier = {
+			name = wildcard_inflation
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.4"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_dev
+		add_country_modifier = {
+			name = wildcard_dev
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.5"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_ccr
+		add_country_modifier = {
+			name = wildcard_ccr
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.6"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_stability
+		add_country_modifier = {
+			name = wildcard_stability
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.8"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_autonomy
+		add_country_modifier = {
+			name = wildcard_autonomy
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.9"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_seperatism
+		add_country_modifier = {
+			name = wildcard_seperatism
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.10"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_tech
+		add_country_modifier = {
+			name = wildcard_tech
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.11"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_idea
+		add_country_modifier = {
+			name = wildcard_idea
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.12"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_institution
+		add_country_modifier = {
+			name = wildcard_institution
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.13"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_prestige
+		add_country_modifier = {
+			name = wildcard_prestige
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.14"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_missionary
+		add_country_modifier = {
+			name = wildcard_missionary
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.15"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_unity
+		add_country_modifier = {
+			name = wildcard_unity
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.16"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_religious_power
+		add_country_modifier = {
+			name = wildcard_religious_power
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.17"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_splendor
+		add_country_modifier = {
+			name = wildcard_splendor
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.18"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_corruption
+		add_country_modifier = {
+			name = wildcard_corruption
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.19"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_governing_cap
+		add_country_modifier = {
+			name = wildcard_governing_cap
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.20"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_reform
+		add_country_modifier = {
+			name = wildcard_reform
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.21"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_estates
+		add_country_modifier = {
+			name = wildcard_estates
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.22"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_colonist
+		add_country_modifier = {
+			name = wildcard_colonist
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.23"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_trade_eff
+		add_country_modifier = {
+			name = wildcard_trade_eff
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.24"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_goods_produced
+		add_country_modifier = {
+			name = wildcard_goods_produced
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.25"
+		ai_chance = { factor = 0 }
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_diplo_rep
+		add_country_modifier = {
+			name = wildcard_diplo_rep
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.26"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_diplo_slots
+		add_country_modifier = {
+			name = wildcard_diplo_slots
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.27"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_vassal_income
+		add_country_modifier = {
+			name = wildcard_vassal_income
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.28"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_ae
+		add_country_modifier = {
+			name = wildcard_ae
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.29"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_diplo_annex
+		add_country_modifier = {
+			name = wildcard_diplo_annex
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.30"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_pwc
+		add_country_modifier = {
+			name = wildcard_pwc
+			duration = -1
+		}
+	}option = {
+		name = "homebrew.41.31"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_culture_convert
+		add_country_modifier = {
+			name = wildcard_culture_convert
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.32"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_liberty
+		add_country_modifier = {
+			name = wildcard_liberty
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.33"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_spy
+		add_country_modifier = {
+			name = wildcard_spy
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.34"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_colonial_range
+		add_country_modifier = {
+			name = wildcard_colonial_range
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.35"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_trade_power
+		add_country_modifier = {
+			name = wildcard_trade_power
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.36"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_merchant
+		add_country_modifier = {
+			name = wildcard_merchant
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.37"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_navy_trad
+		add_country_modifier = {
+			name = wildcard_navy_trad
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.38"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_ship_cost
+		add_country_modifier = {
+			name = wildcard_ship_cost
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.39"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_heavy
+		add_country_modifier = {
+			name = wildcard_heavy
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.40"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_galley
+		add_country_modifier = {
+			name = wildcard_galley
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.41"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_naval_forcelimit
+		add_country_modifier = {
+			name = wildcard_naval_forcelimit
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.42"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_sailors
+		add_country_modifier = {
+			name = wildcard_sailors
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.43"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_naval_morale
+		add_country_modifier = {
+			name = wildcard_naval_morale
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.44"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_admirals
+		add_country_modifier = {
+			name = wildcard_admirals
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.45"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_marine
+		add_country_modifier = {
+			name = wildcard_marine
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.46"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_government
+		add_country_modifier = {
+			name = wildcard_government
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.47"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_army_trad
+		add_country_modifier = {
+			name = wildcard_army_trad
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.48"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_drill_gain
+		add_country_modifier = {
+			name = wildcard_drill_gain
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.49"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_regiment_cost
+		add_country_modifier = {
+			name = wildcard_regiment_cost
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.50"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_ica
+		add_country_modifier = {
+			name = wildcard_ica
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.51"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_cca
+		add_country_modifier = {
+			name = wildcard_cca
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.52"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_aca
+		add_country_modifier = {
+			name = wildcard_aca
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.53"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_ratioflanking
+		add_country_modifier = {
+			name = wildcard_ratioflanking
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.54"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_art_vs_fort
+		add_country_modifier = {
+			name = wildcard_art_vs_fort
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.55"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_backrow
+		add_country_modifier = {
+			name = wildcard_backrow
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.56"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_disc
+		add_country_modifier = {
+			name = wildcard_disc
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.57"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_merc_disc
+		add_country_modifier = {
+			name = wildcard_merc_disc
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.58"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_morale
+		add_country_modifier = {
+			name = wildcard_morale
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.59"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_defense
+		add_country_modifier = {
+			name = wildcard_defense
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.60"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_siege
+		add_country_modifier = {
+			name = wildcard_siege
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.61"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_movement
+		add_country_modifier = {
+			name = wildcard_movement
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.62"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_fire
+		add_country_modifier = {
+			name = wildcard_fire
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.63"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_shock
+		add_country_modifier = {
+			name = wildcard_shock
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.64"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_attrition
+		add_country_modifier = {
+			name = wildcard_attrition
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.65"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_manpower
+		add_country_modifier = {
+			name = wildcard_manpower
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.66"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_forecelimit
+		add_country_modifier = {
+			name = wildcard_forcelimit
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.67"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_attrition_damage
+		add_country_modifier = {
+			name = wildcard_attrition_damage
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.68"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_exhaustion
+		add_country_modifier = {
+			name = wildcard_exhaustion
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.69" #nice
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_leader_fire
+		add_country_modifier = {
+			name = wildcard_leader_fire
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.70"
+		ai_chance = { factor = 0 }
+		set_country_flag = wildcard_chose_leader_shock
+		add_country_modifier = {
+			name = wildcard_leader_shock
+			duration = -1
+		}
+	}
+}
+#wildcard update
+country_event = {
+
+	id = homebrew.41
+	title = homebrew.41.t
+	desc = homebrew.41.d
+	picture = BIG_BOOK_eventPicture
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = { days = 1 }
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = wildcard_cooldown
+			reset_wildcard_modifiers = yes
+		}
+	}
+
+	option = { #same as last time
+		name = "homebrew.41.a"
+		highlight = yes
+		ai_chance  = { factor = 100 }
+		remember_wildcard = yes
+	}
+	option = { #corin take the wheel
+		name = "homebrew.41.b"
+		highlight = yes
+		ai_chance = { factor = 100 }
+		reset_wildcard_flags = yes
+		random_wildcard = yes
+	}
+	option = { #random adm
+		name = "homebrew.41.c"
+		highlight = yes
+		ai_chance = { factor = 0 }
+		add_adm_power = -50
+		reset_wildcard_flags = yes
+		random_wildcard_adm = yes
+	}
+	option = { #random dip
+		name = "homebrew.41.f"
+		highlight = yes
+		ai_chance = { factor = 0 }
+		add_dip_power = -50
+		reset_wildcard_flags = yes
+		random_wildcard_dip = yes
+	}
+	option = { #random mil
+		name = "homebrew.41.e"
+		highlight = yes
+		ai_chance = { factor = 0 }
+		add_mil_power = -50
+		reset_wildcard_flags = yes
+		random_wildcard_mil = yes
+		custom_tooltip = random_wildcard_mil_tt
+	}
+	#list
+	option = {
+		name = "homebrew.41.1"
+		ai_chance = { factor = 0 }
+		add_adm_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_tax
+		add_country_modifier = {
+			name = wildcard_tax
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.2"
+		ai_chance = { factor = 0 }
+		add_adm_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_production
+		add_country_modifier = {
+			name = wildcard_production
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.3"
+		ai_chance = { factor = 0 }
+		add_adm_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_inflation
+		add_country_modifier = {
+			name = wildcard_inflation
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.4"
+		ai_chance = { factor = 0 }
+		add_adm_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_dev
+		add_country_modifier = {
+			name = wildcard_dev
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.5"
+		ai_chance = { factor = 0 }
+		add_adm_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_ccr
+		add_country_modifier = {
+			name = wildcard_ccr
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.6"
+		ai_chance = { factor = 0 }
+		add_adm_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_stability
+		add_country_modifier = {
+			name = wildcard_stability
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.8"
+		ai_chance = { factor = 0 }
+		add_adm_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_autonomy
+		add_country_modifier = {
+			name = wildcard_autonomy
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.9"
+		ai_chance = { factor = 0 }
+		add_adm_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_seperatism
+		add_country_modifier = {
+			name = wildcard_seperatism
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.10"
+		ai_chance = { factor = 0 }
+		add_adm_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_tech
+		add_country_modifier = {
+			name = wildcard_tech
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.11"
+		ai_chance = { factor = 0 }
+		add_adm_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_idea
+		add_country_modifier = {
+			name = wildcard_idea
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.12"
+		ai_chance = { factor = 0 }
+		add_adm_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_institution
+		add_country_modifier = {
+			name = wildcard_institution
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.13"
+		ai_chance = { factor = 0 }
+		add_adm_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_prestige
+		add_country_modifier = {
+			name = wildcard_prestige
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.14"
+		ai_chance = { factor = 0 }
+		add_adm_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_missionary
+		add_country_modifier = {
+			name = wildcard_missionary
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.15"
+		ai_chance = { factor = 0 }
+		add_adm_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_unity
+		add_country_modifier = {
+			name = wildcard_unity
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.16"
+		ai_chance = { factor = 0 }
+		add_adm_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_religious_power
+		add_country_modifier = {
+			name = wildcard_religious_power
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.17"
+		ai_chance = { factor = 0 }
+		add_adm_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_splendor
+		add_country_modifier = {
+			name = wildcard_splendor
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.18"
+		ai_chance = { factor = 0 }
+		add_adm_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_corruption
+		add_country_modifier = {
+			name = wildcard_corruption
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.19"
+		ai_chance = { factor = 0 }
+		add_adm_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_governing_cap
+		add_country_modifier = {
+			name = wildcard_governing_cap
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.20"
+		ai_chance = { factor = 0 }
+		add_adm_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_reform
+		add_country_modifier = {
+			name = wildcard_reform
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.21"
+		ai_chance = { factor = 0 }
+		add_adm_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_estates
+		add_country_modifier = {
+			name = wildcard_estates
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.22"
+		ai_chance = { factor = 0 }
+		add_adm_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_colonist
+		add_country_modifier = {
+			name = wildcard_colonist
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.23"
+		ai_chance = { factor = 0 }
+		add_dip_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_trade_eff
+		add_country_modifier = {
+			name = wildcard_trade_eff
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.24"
+		ai_chance = { factor = 0 }
+		add_dip_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_goods_produced
+		add_country_modifier = {
+			name = wildcard_goods_produced
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.25"
+		ai_chance = { factor = 0 }
+		add_dip_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_diplo_rep
+		add_country_modifier = {
+			name = wildcard_diplo_rep
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.26"
+		ai_chance = { factor = 0 }
+		add_dip_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_diplo_slots
+		add_country_modifier = {
+			name = wildcard_diplo_slots
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.27"
+		ai_chance = { factor = 0 }
+		add_dip_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_vassal_income
+		add_country_modifier = {
+			name = wildcard_vassal_income
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.28"
+		ai_chance = { factor = 0 }
+		add_dip_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_ae
+		add_country_modifier = {
+			name = wildcard_ae
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.29"
+		ai_chance = { factor = 0 }
+		add_dip_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_diplo_annex
+		add_country_modifier = {
+			name = wildcard_diplo_annex
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.30"
+		ai_chance = { factor = 0 }
+		add_dip_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_pwc
+		add_country_modifier = {
+			name = wildcard_pwc
+			duration = -1
+		}
+	}option = {
+		name = "homebrew.41.31"
+		ai_chance = { factor = 0 }
+		add_dip_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_culture_convert
+		add_country_modifier = {
+			name = wildcard_culture_convert
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.32"
+		ai_chance = { factor = 0 }
+		add_dip_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_liberty
+		add_country_modifier = {
+			name = wildcard_liberty
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.33"
+		ai_chance = { factor = 0 }
+		add_dip_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_spy
+		add_country_modifier = {
+			name = wildcard_spy
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.34"
+		ai_chance = { factor = 0 }
+		add_dip_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_colonial_range
+		add_country_modifier = {
+			name = wildcard_colonial_range
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.35"
+		ai_chance = { factor = 0 }
+		add_dip_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_trade_power
+		add_country_modifier = {
+			name = wildcard_trade_power
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.36"
+		ai_chance = { factor = 0 }
+		add_dip_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_merchant
+		add_country_modifier = {
+			name = wildcard_merchant
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.37"
+		ai_chance = { factor = 0 }
+		add_dip_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_navy_trad
+		add_country_modifier = {
+			name = wildcard_navy_trad
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.38"
+		ai_chance = { factor = 0 }
+		add_dip_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_ship_cost
+		add_country_modifier = {
+			name = wildcard_ship_cost
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.39"
+		ai_chance = { factor = 0 }
+		add_dip_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_heavy
+		add_country_modifier = {
+			name = wildcard_heavy
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.40"
+		ai_chance = { factor = 0 }
+		add_dip_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_galley
+		add_country_modifier = {
+			name = wildcard_galley
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.41"
+		ai_chance = { factor = 0 }
+		add_dip_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_naval_forcelimit
+		add_country_modifier = {
+			name = wildcard_naval_forcelimit
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.42"
+		ai_chance = { factor = 0 }
+		add_dip_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_sailors
+		add_country_modifier = {
+			name = wildcard_sailors
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.43"
+		ai_chance = { factor = 0 }
+		add_dip_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_naval_morale
+		add_country_modifier = {
+			name = wildcard_naval_morale
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.44"
+		ai_chance = { factor = 0 }
+		add_dip_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_admirals
+		add_country_modifier = {
+			name = wildcard_admirals
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.45"
+		ai_chance = { factor = 0 }
+		add_dip_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_marine
+		add_country_modifier = {
+			name = wildcard_marine
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.46"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_government
+		add_country_modifier = {
+			name = wildcard_government
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.47"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_army_trad
+		add_country_modifier = {
+			name = wildcard_army_trad
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.48"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_drill_gain
+		add_country_modifier = {
+			name = wildcard_drill_gain
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.49"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_regiment_cost
+		add_country_modifier = {
+			name = wildcard_regiment_cost
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.50"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_ica
+		add_country_modifier = {
+			name = wildcard_ica
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.51"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_cca
+		add_country_modifier = {
+			name = wildcard_cca
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.52"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_aca
+		add_country_modifier = {
+			name = wildcard_aca
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.53"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_ratioflanking
+		add_country_modifier = {
+			name = wildcard_ratioflanking
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.54"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_art_vs_fort
+		add_country_modifier = {
+			name = wildcard_art_vs_fort
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.55"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_backrow
+		add_country_modifier = {
+			name = wildcard_backrow
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.56"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_disc
+		add_country_modifier = {
+			name = wildcard_disc
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.57"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_merc_disc
+		add_country_modifier = {
+			name = wildcard_merc_disc
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.58"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_morale
+		add_country_modifier = {
+			name = wildcard_morale
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.59"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_defense
+		add_country_modifier = {
+			name = wildcard_defense
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.60"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_siege
+		add_country_modifier = {
+			name = wildcard_siege
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.61"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_movement
+		add_country_modifier = {
+			name = wildcard_movement
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.62"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_fire
+		add_country_modifier = {
+			name = wildcard_fire
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.63"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_shock
+		add_country_modifier = {
+			name = wildcard_shock
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.64"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_attrition
+		add_country_modifier = {
+			name = wildcard_attrition
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.65"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_manpower
+		add_country_modifier = {
+			name = wildcard_manpower
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.66"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_forecelimit
+		add_country_modifier = {
+			name = wildcard_forcelimit
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.67"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_attrition_damage
+		add_country_modifier = {
+			name = wildcard_attrition_damage
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.68"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_exhaustion
+		add_country_modifier = {
+			name = wildcard_exhaustion
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.69" #nice
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_leader_fire
+		add_country_modifier = {
+			name = wildcard_leader_fire
+			duration = -1
+		}
+	}
+	option = {
+		name = "homebrew.41.70"
+		ai_chance = { factor = 0 }
+		add_mil_power = -100
+		reset_wildcard_flags = yes
+		set_country_flag = wildcard_chose_leader_shock
+		add_country_modifier = {
+			name = wildcard_leader_shock
+			duration = -1
+		}
+	}
+	
+}
+#remove wildcard
+country_event = {
+
+	id = homebrew.42
+	title = homebrew.42.t
+	desc = homebrew.42.d
+	hidden = yes
+	picture = POPE_PREACHING_eventPicture
+	
+	is_triggered_only = yes
+		
+	trigger = {
+		NOT = { has_idea = homebrew_wildcard }
+		OR = {
+			has_country_modifier = wildcard_tax
+			has_country_modifier = wildcard_production
+			has_country_modifier = wildcard_inflation
+			has_country_modifier = wildcard_dev
+			has_country_modifier = wildcard_ccr
+			has_country_modifier = wildcard_stability
+			has_country_modifier = wildcard_autonomy
+			has_country_modifier = wildcard_seperatism
+			has_country_modifier = wildcard_tech
+			has_country_modifier = wildcard_idea
+			has_country_modifier = wildcard_institution
+			has_country_modifier = wildcard_prestige
+			has_country_modifier = wildcard_missionary
+			has_country_modifier = wildcard_unity
+			has_country_modifier = wildcard_religious_power
+			has_country_modifier = wildcard_splendor
+			has_country_modifier = wildcard_corruption
+			has_country_modifier = wildcard_governing_cap
+			has_country_modifier = wildcard_reform
+			has_country_modifier = wildcard_estates
+			has_country_modifier = wildcard_colonist
+			has_country_modifier = wildcard_trade_eff
+			has_country_modifier = wildcard_goods_produced
+			has_country_modifier = wildcard_diplo_rep
+			has_country_modifier = wildcard_diplo_slots
+			has_country_modifier = wildcard_vassal_income
+			has_country_modifier = wildcard_ae
+			has_country_modifier = wildcard_diplo_annex
+			has_country_modifier = wildcard_pwc
+			has_country_modifier = wildcard_culture_convert
+			has_country_modifier = wildcard_liberty
+			has_country_modifier = wildcard_spy
+			has_country_modifier = wildcard_colonial_range
+			has_country_modifier = wildcard_tradepower
+			has_country_modifier = wildcard_merchant
+			has_country_modifier = wildcard_navy_trad
+			has_country_modifier = wildcard_ship_cost
+			has_country_modifier = wildcard_heavy
+			has_country_modifier = wildcard_galley
+			has_country_modifier = wildcard_naval_forcelimit
+			has_country_modifier = wildcard_sailors
+			has_country_modifier = wildcard_naval_morale
+			has_country_modifier = wildcard_admirals
+			has_country_modifier = wildcard_marine
+			has_country_modifier = wildcard_government
+			has_country_modifier = wildcard_army_trad
+			has_country_modifier = wildcard_drill_gain
+			has_country_modifier = wildcard_regiment_cost
+			has_country_modifier = wildcard_ica
+			has_country_modifier = wildcard_cca
+			has_country_modifier = wildcard_aca
+			has_country_modifier = wildcard_ratioflanking
+			has_country_modifier = wildcard_art_vs_fort
+			has_country_modifier = wildcard_backrow
+			has_country_modifier = wildcard_disc
+			has_country_modifier = wildcard_merc_disc
+			has_country_modifier = wildcard_morale
+			has_country_modifier = wildcard_defense
+			has_country_modifier = wildcard_siege
+			has_country_modifier = wildcard_movement
+			has_country_modifier = wildcard_fire
+			has_country_modifier = wildcard_shock
+			has_country_modifier = wildcard_attrition
+			has_country_modifier = wildcard_manpower
+			has_country_modifier = wildcard_forcelimit
+			has_country_modifier = wildcard_attrition_damage
+			has_country_modifier = wildcard_exhaustion
+			has_country_modifier = wildcard_leader_fire
+			has_country_modifier = wildcard_leader_shock
+		}
+	}
+	
+	mean_time_to_happen = { days = 1 }
+
+	option = {
+		name = "homebrew.42.1"
+		remove_country_modifier = wildcard_tax
+		remove_country_modifier = wildcard_production
+		remove_country_modifier = wildcard_inflation
+		remove_country_modifier = wildcard_dev
+		remove_country_modifier = wildcard_ccr
+		remove_country_modifier = wildcard_stability
+		remove_country_modifier = wildcard_autonomy
+		remove_country_modifier = wildcard_seperatism
+		remove_country_modifier = wildcard_tech
+		remove_country_modifier = wildcard_idea
+		remove_country_modifier = wildcard_institution
+		remove_country_modifier = wildcard_prestige
+		remove_country_modifier = wildcard_missionary
+		remove_country_modifier = wildcard_unity
+		remove_country_modifier = wildcard_religious_power
+		remove_country_modifier = wildcard_splendor
+		remove_country_modifier = wildcard_corruption
+		remove_country_modifier = wildcard_governing_cap
+		remove_country_modifier = wildcard_reform
+		remove_country_modifier = wildcard_estates
+		remove_country_modifier = wildcard_colonist
+		remove_country_modifier = wildcard_trade_eff
+		remove_country_modifier = wildcard_goods_produced
+		remove_country_modifier = wildcard_diplo_rep
+		remove_country_modifier = wildcard_diplo_slots
+		remove_country_modifier = wildcard_vassal_income
+		remove_country_modifier = wildcard_ae
+		remove_country_modifier = wildcard_diplo_annex
+		remove_country_modifier = wildcard_pwc
+		remove_country_modifier = wildcard_culture_convert
+		remove_country_modifier = wildcard_liberty
+		remove_country_modifier = wildcard_spy
+		remove_country_modifier = wildcard_colonial_range
+		remove_country_modifier = wildcard_tradepower
+		remove_country_modifier = wildcard_merchant
+		remove_country_modifier = wildcard_navy_trad
+		remove_country_modifier = wildcard_ship_cost
+		remove_country_modifier = wildcard_heavy
+		remove_country_modifier = wildcard_galley
+		remove_country_modifier = wildcard_naval_forcelimit
+		remove_country_modifier = wildcard_sailors
+		remove_country_modifier = wildcard_naval_morale
+		remove_country_modifier = wildcard_admirals
+		remove_country_modifier = wildcard_marine
+		remove_country_modifier = wildcard_government
+		remove_country_modifier = wildcard_army_trad
+		remove_country_modifier = wildcard_drill_gain
+		remove_country_modifier = wildcard_regiment_cost
+		remove_country_modifier = wildcard_ica
+		remove_country_modifier = wildcard_cca
+		remove_country_modifier = wildcard_aca
+		remove_country_modifier = wildcard_ratioflanking
+		remove_country_modifier = wildcard_art_vs_fort
+		remove_country_modifier = wildcard_backrow
+		remove_country_modifier = wildcard_disc
+		remove_country_modifier = wildcard_merc_disc
+		remove_country_modifier = wildcard_morale
+		remove_country_modifier = wildcard_defense
+		remove_country_modifier = wildcard_siege
+		remove_country_modifier = wildcard_movement
+		remove_country_modifier = wildcard_fire
+		remove_country_modifier = wildcard_shock
+		remove_country_modifier = wildcard_attrition
+		remove_country_modifier = wildcard_manpower
+		remove_country_modifier = wildcard_forcelimit
+		remove_country_modifier = wildcard_attrition_damage
+		remove_country_modifier = wildcard_exhaustion
+		remove_country_modifier = wildcard_leader_fire
+		remove_country_modifier = wildcard_leader_shock
+	}
+}	
+
