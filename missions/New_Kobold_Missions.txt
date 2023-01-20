@@ -1,0 +1,203 @@
+KOB_4 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		culture_group = kobold
+		capital_scope = { superregion = western_cannor_superregion }
+	}
+	
+	fake_dragon_hills = {
+		icon = mission_treasure_room
+		position = 2
+		required_missions = {
+			KOB_conflicts
+		}
+		
+		trigger = {
+			if = {
+				stability = 3
+			}
+		}
+		effect = {
+			add_adm_power = 200
+		}
+	}
+	
+	
+	unify_the_clans2 = {
+		icon = mission_integrate_the_purbias
+		position = 4
+		required_missions = {
+			fake_dragon_hills
+			KOB_unify_the_clans
+		}
+		
+		trigger = {
+		adm_power = 200
+			every_owned_province = {
+			limit = {
+					has_terrain = cavern	
+			}
+				has_building = temple
+				}
+			}
+		
+		effect = {
+			adm_power_cost = -200
+			every_owned_province = {
+			limit = {
+					has_terrain = cavern	
+			}
+			add_province_modifier = {
+			name = kobold_fungi_taxation_reform
+			duration = -1
+				}
+			}
+		}
+	}
+	
+	unify_the_clans3 = {
+		icon = mission_integrate_the_purbias
+		position = 5
+		required_missions = {
+			unify_the_clans2
+			KOB_end_the_gnomish_hierarchy
+		}
+		
+		trigger = {
+		mil_power = 200
+		development_in_provinces = {
+				value = 100
+				has_terrain = cavern
+				}
+				has_building = barracks
+			}
+		
+		effect = {
+			mil_power_cost = -200
+			every_owned_province = {
+			limit = {
+					has_terrain = cavern	
+			}
+			add_province_modifier = {
+			name = kobold_fertility_fungi
+			duration = -1
+				}
+			}
+		}
+	}
+}
+
+KOB_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		culture_group = kobold
+		capital_scope = { superregion = western_cannor_superregion }
+	}
+	
+	funding_from_abroad = {
+		icon = mission_conquer_kanem_bornu
+		position = 1
+		trigger = {
+			any_neighbor_country = {
+				capital_scope = {
+					is_looted = yes
+					devastation = 10
+					controlled_by = ROOT
+				}
+			}
+		}
+		effect = {
+			add_years_of_income = 1
+			add_country_modifier = {
+				name = kobold_looting_skill_low
+				duration = -1
+				}
+			}
+		}
+		
+	funding_from_abroad_2 = {
+		icon = mission_conquer_kanem_bornu
+		position = 2
+		required_missions = {
+			funding_from_abroad
+		}
+		trigger = {
+			any_neighbor_country = {
+				capital_scope = {
+					is_looted = yes
+					development = 20
+					devastation = 20
+					controlled_by = ROOT
+				}
+			}
+		}
+		effect = {
+			add_years_of_income = 2
+			remove_country_modifier = kobold_looting_skill_low
+			add_country_modifier = {
+				name = kobold_looting_skill_med
+				duration = -1
+				}
+			}
+		}
+		
+	funding_from_abroad_3 = {
+		icon = mission_conquer_kanem_bornu
+		position = 3
+		required_missions = {
+			funding_from_abroad_2
+		}
+		trigger = {
+			any_neighbor_country = {
+				capital_scope = {
+					is_looted = yes
+					development = 40
+					devastation = 40
+					controlled_by = ROOT
+				}
+			}
+		}
+		effect = {
+			add_years_of_income = 3
+			remove_country_modifier = kobold_looting_skill_med
+			add_country_modifier = {
+				name = kobold_looting_skill_high
+				duration = -1
+				}
+			}
+		}
+		
+	funding_from_abroad_4 = {
+		icon = mission_conquer_kanem_bornu
+		position = 4
+		required_missions = {
+			funding_from_abroad_3
+		}
+		trigger = {
+			any_neighbor_country = {
+				capital_scope = {
+					is_looted = yes
+					development = 60
+					devastation = 50
+					controlled_by = ROOT
+				}
+			}
+		}
+		effect = {
+			add_years_of_income = 10
+			remove_country_modifier = kobold_looting_skill_high
+			add_country_modifier = {
+				name = kobold_looting_skill_godlike
+				duration = -1
+				}
+			}
+		}
+	}

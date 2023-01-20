@@ -1,0 +1,328 @@
+		#Anbennar - Totally redid this factor
+		modifier = {
+			factor = 0.5
+			NOT = {
+				any_owned_province = {
+					has_port = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0.15
+			NOT = { num_of_ports = 3 }
+			NOT = {
+				any_owned_province = {
+					is_in_capital_area = yes
+					has_empty_adjacent_province = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0.2
+			NOT = { has_institution = renaissance }
+			NOT = { tag = A01 }
+			NOT = { tag = A02 }
+			NOT = { tag = A09 }
+			NOT = { tag = A21 }
+		}
+		modifier = {
+			factor = 0.25
+			capital_scope = {
+				NOT = {
+					OR = {
+						region = lencenor_region
+						region = dragon_coast_region
+						region = dalr_region
+						region = west_dameshead_region
+						region = east_dameshead_region
+						region = businor_region
+						region = akan_region
+						area = vrorenmarch_area
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			culture_group = kobold
+		}
+		modifier = {
+			factor = 0.2
+			NOT = { is_year = 1490 }
+			capital_scope = {
+				NOT = {
+					OR = {
+						region = lencenor_region
+						region = dragon_coast_region
+						region = akan_region
+						area = vrorenmarch_area
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 2.0
+			num_of_ports = 5
+		}
+		modifier = {
+			factor = 2.0
+			num_of_ports = 10
+		}
+		modifier = {
+			factor = 2.0
+			num_of_ports = 15
+		}
+		modifier = {
+			factor = 2.0
+			num_of_ports = 20
+		}
+		modifier = {
+			factor = 100
+			AND = {
+				capital_scope = {
+					OR = {
+						continent = north_america
+						continent = south_america
+					}
+				}
+				NOT = {
+					OR = {
+						#Only cultures such as kheionai are not here
+						culture_group = eltibhari_ruinborn_elf
+						culture_group = devandi_ruinborn_elf
+						culture_group = north_ruinborn_elf
+						culture_group = eordan_ruinborn_elf
+						culture_group = south_ruinborn_elf
+						culture_group = harafe_ruinborn_elf
+						culture_group = effelai_ruinborn_elf
+						culture_group = degenerated_elf
+						culture_group = amadian_ruinborn_elf
+						culture_group = taychendi_ruinborn_elf
+						culture_group = ynnic_ruinborn_elf
+						culture_group = veykodan_ruinborn_elf
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 2.5
+			culture_group = kheionai_ruinborn_elf
+		}
+		modifier = {
+			factor = 1000
+			OR = {
+				tag = A01 #Lorent
+				tag = A02 #Deranne
+				tag = A21 #Venail
+				tag = A33 #Verne
+				tag = A11 #Pearlsedge
+				tag = A47 #Eborthil
+				tag = A29 #Busilar
+				tag = Z18 #Frozenmaw
+				tag = Z50 #Grombar
+			}
+		}
+		modifier = {
+			factor = 50.0
+			OR = {
+				tag = A05 #Reveria
+				tag = U08 #Ekha
+				tag = A79 #Gnomish Hierarchy
+				tag = A09 #Sorncost
+			}
+		}
+		modifier = {
+			factor = 20.0
+			OR = {
+				tag = Z08 #Bjarnrik
+				tag = A19 #Portnamm
+				tag = A80 #Iochand
+				tag = Z10 #Revrhavn
+			}
+		}
+		modifier = {
+			factor = 10.0
+			OR = {
+				tag = A06 #Nimscodd
+				tag = U07 #Viakkoc
+				tag = A31 #Moonhaven
+				tag = A85 #Magisterium
+				tag = A38 #Anbenncost
+				tag = A16 #Wineport
+				tag = A05 #Reveria
+				tag = A04 #Wesdam
+				tag = A13 #Gawed
+				tag = H66 #Jaherian
+				tag = H67 #Rezankand
+			}
+		}
+		modifier = {
+			factor = 5.0
+			OR = {
+				tag = A55 #Dameria
+				tag = A25 #Damescrown
+				tag = A23 #Vertesk
+			}
+		}
+
+
+		factor = 2.5
+		modifier = {
+			factor = 10
+			OR = {
+				has_idea_group = exploration_ideas
+				is_colonial_nation = yes
+			}
+		}
+		modifier = {
+			factor = 10	#Boys who wanna settle the Dreadmire and in the future, the Serpentspine
+			OR = {
+				any_owned_province = {
+					OR = {
+						region = ourdia_region
+						region = dostanor_region
+						region = the_borders_region
+					}
+					has_empty_adjacent_province = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 10	#Serpentspine starts alread get colonists
+			capital_scope = {
+				continent = serpentspine
+			}
+			NOT = { is_year = 1500 }
+			OR = {
+				has_reform = dwarven_clan_reform
+				has_reform = dwarovar_dwarven_clan_reform
+			}
+		}
+		modifier = {
+			factor = 0	#Escanni bois dont take this
+			OR = {
+				has_reform = adventurer_reform
+				has_reform = greentide_horde
+			}
+		}
+		modifier = {
+			factor = 5
+			OR = {
+				tag = A11 #Pearlsedge
+				tag = A02 #Deranne
+				tag = A21 #Venail
+				tag = A47 #Eborthil
+				tag = A05 #Reveria
+				tag = U08 #Ekha
+				tag = A19 #Portnamm
+				tag = A06 #Nimscodd
+				tag = H66 #Jaherian
+				tag = H67 #Rezankand
+				tag = A79 #Gnomish Hierarchy
+			}
+		}
+
+		modifier = {
+			factor = 5
+
+			has_country_modifier = lake_federation_member
+		}
+		modifier = {
+			factor = 100
+			OR = {
+				tag = Z18
+				tag = Z50
+			}
+			adm_tech = 7
+			any_owned_province = {
+				has_empty_adjacent_province = yes
+			}
+		}
+		modifier = {
+			factor = 100
+			NOT = { has_dlc = "Third Rome" } # Has siberian frontier instead
+			OR = {
+				technology_group = tech_orcish
+				technology_group = tech_goblin
+			}
+			any_owned_province = {
+				has_empty_adjacent_province = yes
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_idea_group = exploration_ideas }
+			NOT = { is_colonial_nation = yes }
+			NOT = {
+				any_owned_province = {
+					has_empty_adjacent_province = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				technology_group = tech_cannorian
+				technology_group = tech_halfling
+				technology_group = tech_gerudian
+				technology_group = tech_gnomish
+				technology_group = tech_salahadesi
+				technology_group = tech_elven
+				technology_group = tech_bulwari
+				technology_group = tech_islanders
+			}
+		}
+
+
+modifier = {
+			factor = 0
+			is_colonial_nation = yes
+		}
+		modifier = {
+			factor = 0
+			is_tribal = yes
+			NOT = { tag = Z18 }
+		}
+		modifier = {
+			factor = 0
+			is_subject = yes
+			NOT = {
+				tag = A09
+			}
+		}
+		modifier = {
+			factor = 0
+			primitives = yes
+			NOT = { tag = Z18 }
+		}
+		modifier = {
+			factor = 0
+			current_age = age_of_revolutions #too late
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				any_owned_province = {
+					has_port = yes
+				}
+			}
+			NOT = {
+				any_owned_province = {
+					is_in_capital_area = yes
+					has_empty_adjacent_province = yes
+				}
+			}
+		}
+
+
+	trigger = {
+		if = {
+			limit = { ai = yes }
+			OR = {
+				is_colonial_nation = yes
+				xorme_ai_can_explo_trigger = yes
+				xorme_ai_can_expand_trigger = yes
+				
+			}
+		}
+	}

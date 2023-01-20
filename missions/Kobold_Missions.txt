@@ -1,0 +1,652 @@
+KOB_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		culture_group = kobold
+		capital_scope = { superregion = western_cannor_superregion }
+	}
+	
+	KOB_control_the_greenscale_lands = {
+		icon = mission_conquer_kanem_bornu
+		position = 2
+		required_missions = {
+			KOB_conflicts
+		}
+		trigger = {
+		at_war_with_religious_enemy = yes
+			any_rival_country = {
+				tech_difference = 1
+				war_with = ROOT
+			}
+		}
+		
+		effect = {
+			177 = {
+					add_institution_embracement = {
+						which = feudalism
+						value = 100
+					}
+			173 = {
+					add_institution_embracement = {
+						which = feudalism
+						value = 100
+					}
+				}
+			}
+		}	
+	}
+	KOB_connection_to_the_dragon_coast = {
+		icon = mission_rb_conquer_brittany
+		position = 3
+		required_missions = {
+			KOB_control_the_greenscale_lands
+		}
+		
+		trigger = {
+			at_war_with_religious_enemy = yes
+			manpower = 0
+			is_in_deficit = yes
+			num_of_mercenaries = 1
+			}
+		
+		effect = {
+			define_general = {
+				name = "Snugnu, Destroyer of Worlds"
+				fire = 4
+				shock = 4
+				manuever = 5
+				siege = 3
+				trait = defensive_planner
+			}		
+			add_country_modifier = {
+				name = kobold_on_the_brink
+				duration = 9125
+			}
+			capital_scope = {
+			infantry = A26
+			infantry = A26
+			infantry = A26
+			infantry = A26
+			infantry = A26
+			infantry = A26
+			infantry = A26
+			infantry = A26
+			infantry = A26
+			infantry = A26
+			infantry = A26
+			infantry = A26
+			infantry = A26
+			infantry = A26
+			infantry = A26
+			infantry = A26
+			infantry = A26
+			infantry = A26
+			infantry = A26
+			infantry = A26
+			}
+		}
+	}
+	
+	KOB_prepare_for_the_storm = {
+		icon = mission_conquer_andhra_vij
+		position = 4
+		required_missions = {
+		KOB_connection_to_the_dragon_coast
+		}
+		
+		trigger = {
+			OR = {
+				war_with = A01
+				war_with = A13
+				}
+			}
+		
+		effect = {
+			add_country_modifier = {
+				name = kobold_war_for_our_survival
+				duration = 9125
+			}
+			add_manpower = 40
+			177 = {
+				add_base_tax = 5
+				add_base_manpower = 5
+				add_base_production = 5
+			}
+		}
+	}
+	
+	KOB_brave_the_storm = {
+		icon = mission_beheading
+		position = 5
+		required_missions = {
+			KOB_prepare_for_the_storm
+		}
+		
+		trigger = {
+			is_at_war = no
+			OR = {
+				has_won_war_against = {
+					who = A01
+					max_years_since = 10
+					}
+				has_won_war_against = {
+					who = A13
+					max_years_since = 10
+					}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = kobold_conquered_the_storm
+			}
+			add_adm_power = 200
+			add_dip_power = 200
+			add_mil_power = 200
+		}
+	}
+}
+
+KOB_2 = {
+	slot = 3
+	generic = no
+	has_country_shield = yes
+	
+	potential = {
+		culture_group = kobold
+		capital_scope = { superregion = western_cannor_superregion }
+	}
+	
+	KOB_conflicts = {
+		icon = mission_establish_the_black_guard
+		ai = yes
+		position = 1
+		required_missions = {
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = yes }
+				army_size_percentage = 0.75
+			}
+			else = {
+				army_size_percentage = 0.95
+			}
+		}
+		
+		effect = {
+			custom_tooltip = kobold_conflicts_tooltip
+			hidden_effect = {
+				dragonpoint_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }
+					}
+					add_claim = ROOT
+				}
+				dragondowns_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }
+					}
+					add_claim = ROOT
+				}
+				dragonspine_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }
+					}
+					add_claim = ROOT
+				}
+				dragonheights_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }
+					}
+					add_claim = ROOT
+				}
+				dragondepth_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }
+					}
+					add_claim = ROOT
+				}
+				coddorran_heights_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }
+					}
+					add_claim = ROOT
+				}
+				170 = {
+					if = {
+						limit = {
+							NOT = { is_core = ROOT }
+							NOT = { is_claim = ROOT }
+						}
+						add_claim = ROOT
+					}
+				}
+				694 = {
+					if = {
+						limit = {
+							NOT = { is_core = ROOT }
+							NOT = { is_claim = ROOT }
+						}
+						add_claim = ROOT
+					}
+				}
+			}
+		}
+	}
+	
+	KOB_control_the_bluescale_lands = {
+		icon = mission_conquer_kanem_bornu
+		position = 2
+		required_missions = {
+			KOB_conflicts
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = dragondepth_area
+				area = dragonheights_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			dragondepth_area = {
+				type = all
+				owned_by = ROOT
+			}
+			dragonheights_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		
+		effect = {
+			dragonheights_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }
+					}
+					add_core = ROOT
+				}
+			dragondepth_area = {
+					limit = {
+						NOT = { is_core = ROOT }
+						NOT = { is_claim = ROOT }
+					}
+					add_core = ROOT
+				}
+			}
+		}
+	
+	KOB_unify_the_clans = {
+		icon = mission_integrate_the_purbias
+		position = 3
+		required_missions = {
+			KOB_control_the_bluescale_lands
+		}
+		
+		trigger = {
+			AND = {
+			dragonheights_area = {
+				devastation = 0
+			}
+			dragondepth_area = {
+			devastation = 0
+			}
+		}
+	}
+		
+		effect = {
+			every_owned_province = {
+			limit = {
+					has_terrain = cavern	
+			}
+			add_province_modifier = {
+			name = kobold_cavern_construction_techniques
+			duration = -1
+				}
+			}
+		}
+	}
+	
+	KOB_end_the_gnomish_hierarchy = {
+		icon = mission_mounted_battle
+		position = 4
+		required_missions = {
+			KOB_unify_the_clans
+		}
+		
+		provinces_to_highlight = {
+			has_terrain = cavern
+			owned_by = ROOT
+		}
+		
+		trigger = {
+			development_in_provinces = {
+				value = 60
+				has_terrain = cavern
+				}
+			}
+		
+		effect = {
+			every_owned_province = {
+			limit = {
+					has_terrain = cavern	
+			}
+			change_trade_goods = fungi
+			add_province_modifier = {
+			name = kobold_cavern_farming_expertise
+			duration = -1
+				}
+			}
+		}
+	}
+	
+	KOB_exterminate_the_gnome = {
+		icon = mission_three_death
+		position = 5
+		required_missions = {
+			KOB_end_the_gnomish_hierarchy
+		}
+		
+		provinces_to_highlight = {
+			has_terrain = cavern
+			owned_by = ROOT
+		}
+		
+		trigger = {
+			production_leader = {
+			trade_goods = fungi
+			}
+			treasury = 2400
+		}
+		
+		effect = {
+			add_treasury = -2400
+			every_owned_province = {
+			limit = {
+					has_terrain = cavern	
+			}
+			add_building_construction = {
+				building = farm_estate
+				speed = 0.8
+				cost = 0.4
+				}
+			}
+		}
+	}
+	
+	KOB_brandish_the_storm = {
+		icon = mission_trade_with_cathay
+		position = 6
+		required_missions = {
+			KOB_exterminate_the_gnome
+			KOB_brave_the_storm
+			KOB_conquer_the_dragon_hills
+		}
+		
+		provinces_to_highlight = {
+			is_capital_of = ROOT
+			NOT = { is_prosperous = yes }
+		}
+		
+		trigger = {
+			if = {
+				limit = { has_dlc = "Mandate of Heaven" }
+				capital_scope = { is_prosperous = yes } 
+			}
+			else = {
+				is_year = 1500
+			}
+			NOT = { war_exhaustion = 1 }
+		}
+		effect = {
+			add_country_modifier = {
+				name = kobold_survivor
+				duration = 18250
+			}
+		}
+	}
+	
+	KOB_expand_our_religion = {
+		icon = mission_unite_rajputana
+		position = 7
+		required_missions = {
+			KOB_brandish_the_storm
+		}
+		
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = { has_tax_building_trigger = yes }
+		}
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				num_of_owned_provinces_with = {
+					value = 5
+					has_tax_building_trigger = yes
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = kobold_pious
+				duration = -1
+			}
+		}
+	}
+}
+
+KOB_3 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		culture_group = kobold
+		capital_scope = { superregion = western_cannor_superregion }
+	}
+	
+	KOB_control_the_redscale_lands = {
+		icon = mission_conquer_kanem_bornu
+		position = 2
+		required_missions = {
+			KOB_conflicts
+		}
+		trigger = {
+			OR {
+				has_won_war_against = {
+						who = A06
+						max_years_since = 10
+						}
+				NOT = {exists = A06}
+				}
+			}
+		
+		effect = {
+			add_prestige = 10
+			change_government_reform_progress = 50
+			nimscodd_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+			add_permanent_claim = ROOT
+			}
+			gnomish_pass_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+			add_permanent_claim = ROOT
+			}
+		}
+		
+	}
+	
+	KOB_control_the_pass = {
+		icon = mission_west_african_ports
+		position = 3
+		required_missions = {
+			KOB_control_the_redscale_lands
+			KOB_control_the_bluescale_lands
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+			area = nimscodd_area
+			area = gnomish_pass_area
+			}
+			owned_by = A06
+		}
+		trigger = {
+				nimscodd_area = {
+					type = all
+					NOT = {owned_by = A06}
+				}
+				gnomish_pass_area = {
+					type = all
+					NOT = {owned_by = A06}
+				}
+			}
+		
+		effect = {
+			add_prestige = 10
+			change_government_reform_progress = 75
+			storm_isles_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			westmoor_proper_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	KOB_defeat_reveria = {
+		icon = mission_viking
+		position = 4
+		required_missions = {
+			KOB_control_the_pass
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = storm_isles_area
+				area = westmoor_proper_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			
+			
+			AND = {
+				storm_isles_area = {
+				type = all
+				owned_by = ROOT
+				}
+				westmoor_proper_area = {
+				type = all
+				owned_by = ROOT
+				}
+			}
+		}
+		
+		effect = {
+			add_prestige = 10
+			change_government_reform_progress = 100
+			coddorran_heights_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			mawriver_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	KOB_conquer_the_dragon_hills = {
+		icon = mission_treasure_room
+		position = 5
+		required_missions = {
+			KOB_defeat_reveria
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+			area = mawriver_area
+			area =coddorran_heights_area
+			province_id = 696
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			696 = {
+				is_looted = yes
+				devastation = 10
+				controlled_by = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			change_government_reform_progress = 150
+			country_event = { id = flavor_kobildzan.30 }
+			serpentshead_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			northen_greatwoods_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			beronmoor_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			moorhills_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}

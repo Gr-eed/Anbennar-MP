@@ -1,0 +1,715 @@
+### this file is used to keep a record of changes made to the on_action file, this file should only be used when Homebrew gets updated ###
+on_siege_lost_province =  {
+	if = {
+		limit = { FROM = { has_country_flag = gamer_move } } #Serpentrot Gas 
+		province_event = { id = homebrew.2 }
+	}
+}
+on_bi_yearly_pulse = {
+	events = {
+		#homebrew cleanup, set to pulse to reduce lag. might consider condensing into one event #update: don't
+		homebrew.10
+		homebrew.11
+		homebrew.12
+		homebrew.13
+		homebrew.15
+		homebrew.17
+		homebrew.19
+		homebrew.21
+		homebrew.23
+		homebrew.24
+		homebrew.26
+		homebrew.27
+		homebrew.30
+		homebrew.31
+		homebrew.38
+		homebrew.42
+	}
+}
+on_bi_yearly_pulse_4 = {
+	#homebrew
+	if = { 
+		limit = { 
+			owns = 351 #Nurael
+			is_religion_enabled = ravelian
+		} 
+		random = {
+			chance = 50
+			ROOT = {
+				country_event = { 
+					id = homebrew.4 
+					days = 1
+					random = 90
+				} 
+			}
+		}
+	}
+}
+on_five_year_pulse = {
+	random_events = {
+	
+		### Idea Variation events ###
+
+		100 = ideagroups_idea_variation.1
+		100 = ideagroups_idea_variation.2
+		100 = ideagroups_idea_variation.3
+		100 = ideagroups_idea_variation.4
+		100 = ideagroups_idea_variation.5
+		100 = ideagroups_idea_variation.6
+		100 = ideagroups_idea_variation.7
+		100 = ideagroups_idea_variation.8
+		100 = ideagroups_idea_variation.9
+		100 = ideagroups_idea_variation.10
+	
+		100 = ideagroups_idea_variation.11
+		100 = ideagroups_idea_variation.12
+		100 = ideagroups_idea_variation.13
+		100 = ideagroups_idea_variation.14
+		100 = ideagroups_idea_variation.15
+		100 = ideagroups_idea_variation.16
+		100 = ideagroups_idea_variation.17
+		100 = ideagroups_idea_variation.18
+		100 = ideagroups_idea_variation.19
+		100 = ideagroups_idea_variation.20
+	
+		100 = ideagroups_idea_variation.21
+		100 = ideagroups_idea_variation.22
+		100 = ideagroups_idea_variation.23
+		100 = ideagroups_idea_variation.24
+		100 = ideagroups_idea_variation.25
+		100 = ideagroups_idea_variation.26
+		100 = ideagroups_idea_variation.27
+		100 = ideagroups_idea_variation.28
+		100 = ideagroups_idea_variation.29
+		100 = ideagroups_idea_variation.30
+	
+		100 = ideagroups_idea_variation.31
+		100 = ideagroups_idea_variation.32
+		100 = ideagroups_idea_variation.33
+		100 = ideagroups_idea_variation.34
+		100 = ideagroups_idea_variation.35
+		100 = ideagroups_idea_variation.36
+		100 = ideagroups_idea_variation.37
+		100 = ideagroups_idea_variation.38
+		100 = ideagroups_idea_variation.39
+		100 = ideagroups_idea_variation.40
+	
+		100 = ideagroups_idea_variation.51
+		100 = ideagroups_idea_variation.52
+		100 = ideagroups_idea_variation.53
+		100 = ideagroups_idea_variation.54
+		100 = ideagroups_idea_variation.55
+		100 = ideagroups_idea_variation.56
+		100 = ideagroups_idea_variation.57
+		100 = ideagroups_idea_variation.58
+		100 = ideagroups_idea_variation.59
+		100 = ideagroups_idea_variation.60
+	
+		100 = ideagroups_idea_variation.61
+		100 = ideagroups_idea_variation.62
+		100 = ideagroups_idea_variation.63
+		100 = ideagroups_idea_variation.64
+		100 = ideagroups_idea_variation.65
+		100 = ideagroups_idea_variation.66
+		100 = ideagroups_idea_variation.67
+		100 = ideagroups_idea_variation.68
+		100 = ideagroups_idea_variation.69
+		100 = ideagroups_idea_variation.70
+	
+		100 = ideagroups_idea_variation.71
+		100 = ideagroups_idea_variation.72
+		100 = ideagroups_idea_variation.73
+		100 = ideagroups_idea_variation.74
+		100 = ideagroups_idea_variation.75
+		100 = ideagroups_idea_variation.76
+		100 = ideagroups_idea_variation.77
+		100 = ideagroups_idea_variation.78
+		100 = ideagroups_idea_variation.79
+		100 = ideagroups_idea_variation.80
+	
+		100 = ideagroups_idea_variation.81
+		100 = ideagroups_idea_variation.82
+		100 = ideagroups_idea_variation.83
+		100 = ideagroups_idea_variation.84
+		100 = ideagroups_idea_variation.85
+		100 = ideagroups_idea_variation.86
+		100 = ideagroups_idea_variation.87
+		100 = ideagroups_idea_variation.88
+		100 = ideagroups_idea_variation.89
+		100 = ideagroups_idea_variation.90
+	
+		100 = ideagroups_idea_variation.91
+		100 = ideagroups_idea_variation.92
+		100 = ideagroups_idea_variation.93
+		100 = ideagroups_idea_variation.94
+		100 = ideagroups_idea_variation.95
+		100 = ideagroups_idea_variation.96
+		100 = ideagroups_idea_variation.97
+		100 = ideagroups_idea_variation.98
+		100 = ideagroups_idea_variation.99
+		100 = ideagroups_idea_variation.100
+	
+		100 = ideagroups_idea_variation.101
+		100 = ideagroups_idea_variation.102
+		100 = ideagroups_idea_variation.103
+		100 = ideagroups_idea_variation.104
+		100 = ideagroups_idea_variation.105
+		100 = ideagroups_idea_variation.106
+		100 = ideagroups_idea_variation.107
+		100 = ideagroups_idea_variation.108
+		100 = ideagroups_idea_variation.109
+		100 = ideagroups_idea_variation.110
+	
+		100 = ideagroups_idea_variation.111
+		100 = ideagroups_idea_variation.112
+		100 = ideagroups_idea_variation.113
+		100 = ideagroups_idea_variation.114
+		100 = ideagroups_idea_variation.115
+		100 = ideagroups_idea_variation.116
+		100 = ideagroups_idea_variation.117
+		100 = ideagroups_idea_variation.118
+		100 = ideagroups_idea_variation.119
+		100 = ideagroups_idea_variation.120
+	
+		100 = ideagroups_idea_variation.121
+		100 = ideagroups_idea_variation.122
+		100 = ideagroups_idea_variation.123
+		100 = ideagroups_idea_variation.124
+		100 = ideagroups_idea_variation.125
+		100 = ideagroups_idea_variation.126
+		100 = ideagroups_idea_variation.127
+		100 = ideagroups_idea_variation.128
+		100 = ideagroups_idea_variation.129
+		100 = ideagroups_idea_variation.130
+	
+		100 = ideagroups_idea_variation.131
+		100 = ideagroups_idea_variation.132
+		100 = ideagroups_idea_variation.133
+		100 = ideagroups_idea_variation.134
+		100 = ideagroups_idea_variation.135
+		100 = ideagroups_idea_variation.136
+		100 = ideagroups_idea_variation.137
+		100 = ideagroups_idea_variation.138
+		100 = ideagroups_idea_variation.139
+		100 = ideagroups_idea_variation.140
+	
+		100 = ideagroups_idea_variation.141
+		100 = ideagroups_idea_variation.142
+		100 = ideagroups_idea_variation.143
+		100 = ideagroups_idea_variation.144
+		100 = ideagroups_idea_variation.145
+		100 = ideagroups_idea_variation.146
+		100 = ideagroups_idea_variation.147
+		100 = ideagroups_idea_variation.148
+		100 = ideagroups_idea_variation.149
+		100 = ideagroups_idea_variation.150
+	
+		100 = ideagroups_idea_variation.151
+		100 = ideagroups_idea_variation.152
+		100 = ideagroups_idea_variation.153
+		100 = ideagroups_idea_variation.154
+		100 = ideagroups_idea_variation.155
+		100 = ideagroups_idea_variation.156
+		100 = ideagroups_idea_variation.157
+		100 = ideagroups_idea_variation.158
+		100 = ideagroups_idea_variation.159
+		100 = ideagroups_idea_variation.160
+	
+		100 = ideagroups_idea_variation.161
+		100 = ideagroups_idea_variation.162
+		100 = ideagroups_idea_variation.163
+		100 = ideagroups_idea_variation.164
+		100 = ideagroups_idea_variation.165
+		100 = ideagroups_idea_variation.166
+		100 = ideagroups_idea_variation.167
+		100 = ideagroups_idea_variation.168
+		100 = ideagroups_idea_variation.169
+		100 = ideagroups_idea_variation.170
+	
+		100 = ideagroups_idea_variation.171
+		100 = ideagroups_idea_variation.172
+		100 = ideagroups_idea_variation.173
+		100 = ideagroups_idea_variation.174
+		100 = ideagroups_idea_variation.175
+		100 = ideagroups_idea_variation.176
+		100 = ideagroups_idea_variation.177
+		100 = ideagroups_idea_variation.178
+		100 = ideagroups_idea_variation.179
+		100 = ideagroups_idea_variation.180
+	
+		100 = ideagroups_idea_variation.181
+		100 = ideagroups_idea_variation.182
+		100 = ideagroups_idea_variation.183
+		100 = ideagroups_idea_variation.184
+		100 = ideagroups_idea_variation.185
+		100 = ideagroups_idea_variation.186
+		100 = ideagroups_idea_variation.187
+		100 = ideagroups_idea_variation.188
+		100 = ideagroups_idea_variation.189
+		100 = ideagroups_idea_variation.190
+	
+		100 = ideagroups_idea_variation.191
+		100 = ideagroups_idea_variation.192
+		100 = ideagroups_idea_variation.193
+		100 = ideagroups_idea_variation.194
+		100 = ideagroups_idea_variation.195
+		100 = ideagroups_idea_variation.196
+		100 = ideagroups_idea_variation.197
+		100 = ideagroups_idea_variation.198
+		100 = ideagroups_idea_variation.199
+		100 = ideagroups_idea_variation.200
+	
+		100 = ideagroups_idea_variation.201
+		100 = ideagroups_idea_variation.202
+		100 = ideagroups_idea_variation.203
+		100 = ideagroups_idea_variation.204
+		100 = ideagroups_idea_variation.205
+		100 = ideagroups_idea_variation.206
+		100 = ideagroups_idea_variation.207
+		100 = ideagroups_idea_variation.208
+		100 = ideagroups_idea_variation.209
+		100 = ideagroups_idea_variation.210
+	
+		100 = ideagroups_idea_variation.211
+		100 = ideagroups_idea_variation.212
+		100 = ideagroups_idea_variation.213
+		100 = ideagroups_idea_variation.214
+		100 = ideagroups_idea_variation.215
+		100 = ideagroups_idea_variation.216
+		100 = ideagroups_idea_variation.217
+		100 = ideagroups_idea_variation.218
+		100 = ideagroups_idea_variation.219
+		100 = ideagroups_idea_variation.220
+	
+		100 = ideagroups_idea_variation.221
+		100 = ideagroups_idea_variation.222
+		100 = ideagroups_idea_variation.223
+		100 = ideagroups_idea_variation.224
+		100 = ideagroups_idea_variation.225
+		100 = ideagroups_idea_variation.226
+		100 = ideagroups_idea_variation.227
+		100 = ideagroups_idea_variation.228
+		100 = ideagroups_idea_variation.229
+		100 = ideagroups_idea_variation.230
+	
+		100 = ideagroups_idea_variation.231
+		100 = ideagroups_idea_variation.232
+		100 = ideagroups_idea_variation.233
+		100 = ideagroups_idea_variation.234
+		100 = ideagroups_idea_variation.235
+		100 = ideagroups_idea_variation.236
+		100 = ideagroups_idea_variation.237
+		100 = ideagroups_idea_variation.238
+		100 = ideagroups_idea_variation.239
+		100 = ideagroups_idea_variation.240
+	
+		100 = ideagroups_idea_variation.241
+		100 = ideagroups_idea_variation.242
+		100 = ideagroups_idea_variation.243
+		100 = ideagroups_idea_variation.244
+		100 = ideagroups_idea_variation.245
+		100 = ideagroups_idea_variation.246
+		100 = ideagroups_idea_variation.247
+		100 = ideagroups_idea_variation.248
+		100 = ideagroups_idea_variation.249
+		100 = ideagroups_idea_variation.250
+	
+		100 = ideagroups_idea_variation.251
+		100 = ideagroups_idea_variation.252
+		100 = ideagroups_idea_variation.253
+		100 = ideagroups_idea_variation.254
+		100 = ideagroups_idea_variation.255
+		100 = ideagroups_idea_variation.256
+		100 = ideagroups_idea_variation.257
+		100 = ideagroups_idea_variation.258
+		100 = ideagroups_idea_variation.259
+		100 = ideagroups_idea_variation.260
+	
+		100 = ideagroups_idea_variation.261
+		100 = ideagroups_idea_variation.262
+		100 = ideagroups_idea_variation.263
+		100 = ideagroups_idea_variation.264
+		100 = ideagroups_idea_variation.265
+		100 = ideagroups_idea_variation.266
+		100 = ideagroups_idea_variation.267
+		100 = ideagroups_idea_variation.268
+		100 = ideagroups_idea_variation.269
+		100 = ideagroups_idea_variation.270
+		
+		100 = ideagroups_idea_variation.271
+		100 = ideagroups_idea_variation.272
+		100 = ideagroups_idea_variation.273
+		100 = ideagroups_idea_variation.274
+		100 = ideagroups_idea_variation.275
+		100 = ideagroups_idea_variation.276
+		100 = ideagroups_idea_variation.277
+		100 = ideagroups_idea_variation.278
+		100 = ideagroups_idea_variation.279
+		100 = ideagroups_idea_variation.280
+	
+		100 = ideagroups_idea_variation.281
+		100 = ideagroups_idea_variation.282
+		100 = ideagroups_idea_variation.283
+		100 = ideagroups_idea_variation.284
+		100 = ideagroups_idea_variation.285
+		100 = ideagroups_idea_variation.286
+		100 = ideagroups_idea_variation.287
+		100 = ideagroups_idea_variation.288
+		100 = ideagroups_idea_variation.289
+		100 = ideagroups_idea_variation.290
+	
+		100 = ideagroups_idea_variation.291
+		100 = ideagroups_idea_variation.292
+		100 = ideagroups_idea_variation.293
+		100 = ideagroups_idea_variation.294
+		100 = ideagroups_idea_variation.295
+		100 = ideagroups_idea_variation.296
+		100 = ideagroups_idea_variation.297
+		100 = ideagroups_idea_variation.298
+		100 = ideagroups_idea_variation.299
+		100 = ideagroups_idea_variation.300
+
+		### Idea Variation end ###
+
+		### Homebrew ###
+		
+		# Industrial Events
+		100 = homebrew_idea.1
+		100 = homebrew_idea.2
+		100 = homebrew_idea.3
+		100 = homebrew_idea.4
+		100 = homebrew_idea.5
+		100 = homebrew_idea.6
+		100 = homebrew_idea.7
+		100 = homebrew_idea.8
+		100 = homebrew_idea.9
+		100 = homebrew_idea.10
+		
+		# Artificery Events
+		100 = homebrew_idea.11
+		100 = homebrew_idea.12
+		100 = homebrew_idea.13
+		100 = homebrew_idea.15
+		100 = homebrew_idea.19
+		100 = homebrew_idea.20
+		100 = homebrew_idea.29
+		100 = homebrew_idea.30
+		100 = homebrew_idea.31
+		100 = homebrew_idea.32
+		100 = homebrew_idea.36
+		
+		# Magocratic Events
+		100 = homebrew_idea.41
+		100 = homebrew_idea.42
+		100 = homebrew_idea.43
+		100 = homebrew_idea.44
+		100 = homebrew_idea.45
+		100 = homebrew_idea.46
+		100 = homebrew_idea.47
+		100 = homebrew_idea.49
+		100 = homebrew_idea.50
+		
+		# Monstrous Events
+		100 = homebrew_idea.51
+		100 = homebrew_idea.52
+		100 = homebrew_idea.53
+		100 = homebrew_idea.54
+		100 = homebrew_idea.55
+		100 = homebrew_idea.56
+		100 = homebrew_idea.57
+		100 = homebrew_idea.59
+		100 = homebrew_idea.60
+		
+		# Imperial Events
+		100 = homebrew_idea.61
+		100 = homebrew_idea.62
+		100 = homebrew_idea.63
+		100 = homebrew_idea.64
+		100 = homebrew_idea.65
+		100 = homebrew_idea.66
+		100 = homebrew_idea.67
+		100 = homebrew_idea.69
+		100 = homebrew_idea.70
+		100 = homebrew_idea.71
+		
+		### Homebrew end ###
+	}
+}
+on_province_owner_change = {
+	### Homebrew ###
+	#update dwarven citadel
+	if = {
+		limit = {
+			NOT = {
+				has_province_modifier = dwarven_citadel
+			}
+			AND = {
+				owner = { has_idea = AIG_dwarven_citadels }
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					OR = {
+						fort_level = 2
+						has_building = ramparts
+					}
+					continent = serpentspine
+				}
+				add_province_modifier = {
+					name = "dwarven_citadel"
+					duration = -1
+				}
+			}
+		}
+	}
+	#update serpentsbeat
+	if = {
+		limit = {
+			NOT = {
+				has_province_modifier = serpentsbeat
+			}
+			AND = {
+				owner = { has_idea = AIG_serpentsbeat }
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					has_terrain = dwarven_road
+				}
+				add_province_modifier = { 
+					name = "serpentsbeat"
+					duration = -1
+				}
+			}
+		}
+	}
+	#update rural industry
+	if = {
+		limit = {
+			NOT = {
+				has_province_modifier = rural_industry
+			}
+			AND = {
+				owner = { has_idea = AIG_rural_industries }
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+				OR = {
+					has_terrain = glacier
+					has_terrain = forest
+					has_terrain = gladeway
+					has_terrain = hills
+					has_terrain = woods
+					has_terrain = mountain
+					has_terrain = jungle
+					has_terrain = marsh
+					has_terrain = highlands
+					has_terrain = cavern
+					has_terrain = mushroom_forest_terrain
+					has_terrain = dwarven_road
+					has_terrain = ancient_forest
+					}		
+				}
+				add_province_modifier = {
+				name = "rural_industry"
+				duration = -1
+				}
+			}
+		}
+	}
+	#update urban industry
+	if = {
+		limit = {
+			NOT = {
+				has_province_modifier = urban_industry
+			}
+			AND = {
+				owner = { has_idea = AIG_imperial_cities }
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					OR = {
+						has_terrain = dwarven_hold
+						has_terrain = dwarven_hold_surface
+						has_terrain = city_terrain
+					}
+				}
+				add_province_modifier = { 
+					name = "urban_industry"
+					duration = -1
+				}
+			}
+		}
+	}
+	#update mining regulations
+	if = {
+		limit = {
+			OR = {
+				NOT = { has_province_modifier = homebrew_mining_regulations_damestear }
+				NOT = { has_province_modifier = homebrew_mining_regulations_relic }
+			}
+			AND = {
+				owner = { has_idea = AIG_mining_regulations }
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					trade_goods = damestear
+					has_province_modifier = damestear_rich_deposit		
+				}
+				remove_province_modifier = damestear_rich_deposit
+				add_province_modifier = {
+					name = "homebrew_mining_regulations_damestear"
+					duration = -1
+					}
+				hidden_effect = {
+					REB = {
+						change_variable = {
+							which = homebrew_permadamestear
+							value = 1
+							}
+						}
+					}
+				}
+			else_if = {
+				limit = {
+					trade_goods = damestear		
+				}
+				set_province_flag = homebrew_permanent_damestear
+				hidden_effect = {
+					REB = {
+						change_variable = {
+							which = homebrew_permadamestear
+							value = 1
+							}
+						}
+					}
+				}
+			if = {
+				limit = {
+					trade_goods = precursor_relics
+					has_province_modifier = pr_great_ruin	
+					NOT = { has_province_modifier = eordan_expedition_site }
+				}
+				remove_province_modifier = pr_great_ruin
+				add_province_modifier = {
+					name = "homebrew_mining_regulations_relic"
+					duration = -1
+					}
+				}
+			else_if = {
+				limit = {
+					trade_goods = precursor_relics		
+				}
+				set_province_flag = homebrew_permanent_precursor_relics
+				}
+		}
+	}
+}
+on_general_recruited = {
+	if = { #homebrew
+		limit = {
+			has_idea = generalstab7
+		}
+		add_army_tradition = 2
+	}
+}
+on_admiral_recruited = {
+	if = { #homebrew
+		limit = {
+			has_idea = generalstab7
+		}
+		add_navy_tradition = 3
+	}
+}
+on_conquistador_recruited = {
+	if = { #homebrew
+		limit = {
+			has_idea = generalstab7
+		}
+		add_army_tradition = 2
+	}
+}
+on_explorer_recruited = {
+	if = { #homebrew
+		limit = {
+			has_idea = generalstab7
+		}
+		add_navy_tradition = 3
+	}
+}
+on_mercenary_recruited = {
+	if = {
+		limit = {
+			OR = {
+				FROM = { NOT = { has_country_flag = oyo_cavalry_do_not_consume_ap } }
+				ROOT = { NOT = { mercenary_company = merc_oyo_cavalry } }
+
+				## Anbennar Elite Mercs
+				ROOT = { NOT = { mercenary_company = merc_442nd } }
+				ROOT = { NOT = { mercenary_company = merc_aelnar_first_corps } }
+				ROOT = { NOT = { mercenary_company = merc_aelnar_second_corps } }
+				ROOT = { NOT = { mercenary_company = merc_aelnar_third_corps } }
+				ROOT = { NOT = { mercenary_company = merc_aelnar_fourth_corps } }
+				ROOT = { NOT = { mercenary_company = merc_amldahvad_guard } }
+				ROOT = { NOT = { mercenary_company = merc_corvurian_dark_legion } }
+				ROOT = { NOT = { mercenary_company = merc_domandrod_lightbringers } }
+				ROOT = { NOT = { mercenary_company = merc_greedy_grin_skirmishers } }
+				ROOT = { NOT = { mercenary_company = merc_grim_legion } }
+				ROOT = { NOT = { mercenary_company = merc_iron_company } }
+				ROOT = { NOT = { mercenary_company = merc_marrhold_griffon_bombardiers } }
+				ROOT = { NOT = { mercenary_company = merc_marrhold_griffon_grenadiers } }
+				ROOT = { NOT = { mercenary_company = merc_marrhold_griffon_knight } }
+				ROOT = { NOT = { mercenary_company = merc_marrhold_griffon_sky_lancers } }
+				ROOT = { NOT = { mercenary_company = merc_marrhold_griffon_survey } }
+				ROOT = { NOT = { mercenary_company = merc_marrhold_steel_griffon } }
+				ROOT = { NOT = { mercenary_company = merc_mountainshark_mountainsharks } }
+				ROOT = { NOT = { mercenary_company = merc_ogrillons } }
+				ROOT = { NOT = { mercenary_company = merc_rezankand_var_kultoz } }
+				ROOT = { NOT = { mercenary_company = merc_sarisung_city_guard } }
+				ROOT = { NOT = { mercenary_company = merc_seinathil_warsingers } }
+				ROOT = { NOT = { mercenary_company = merc_serpent_knights } }
+				ROOT = { NOT = { mercenary_company = merc_snotfinger_insult_warriors } }
+				ROOT = { NOT = { mercenary_company = merc_spiderwretch_spiderriders } }
+				ROOT = { NOT = { mercenary_company = merc_suraelic_guard } }
+				ROOT = { NOT = { mercenary_company = merc_thieving_arrow_sharpshooters } }
+				ROOT = { NOT = { mercenary_company = merc_truedagger_dwarf_guns } }
+				ROOT = { NOT = { mercenary_company = merc_wolves_of_crovis } }
+				### add elite mercs here.
+			}
+		}
+		FROM = {
+			if = {
+				limit = { #Homebrew
+					NOT = { has_idea = soldnerheer7 }  
+				}
+				add_army_professionalism = -0.035
+			}
+		}
+	}
+}
+on_colonist_boosting_colony = {
+	hidden_effect = {
+		#homebrew
+		if = {
+			limit = { 
+				OR = {
+					owner = { has_idea = homebrew_colonial_boom } 
+					overlord = { has_idea = homebrew_colonial_boom } 
+				}
+				is_colony = yes 
+			}
+			add_permanent_province_modifier = {
+				name = "homebrew_colonial_boom_modifier"
+				duration = 18250
+			}
+		}
+	}
+}

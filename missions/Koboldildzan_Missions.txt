@@ -1,0 +1,764 @@
+KOB_3_commun = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		tag = Z38
+	}
+	
+	KOB_determine_our_fate = {
+		icon = mission_the_triangle_trade
+		ai = yes
+		position = 8
+		
+		required_missions = {
+			KOB_expand_our_religion
+		}
+		
+		trigger = {
+			is_at_war = no
+		}
+		effect = {
+			hidden_effect = { set_country_flag = kobold_dragon_path }
+			swap_non_generic_missions = yes
+			add_country_modifier = {
+				name = narrowminded_modifier
+				duration = 3650
+			}
+			country_event = {
+				id = flavor_kobildzan.20
+				days = 1825
+			}
+		}
+	}
+}
+
+KOB_1_dragon = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		tag = Z38
+		has_country_flag = kobold_dragon_path
+	}
+	
+	KOB_spread_our_worship = {
+		icon = mission_din_i_llahi
+		ai = yes
+		position = 10
+		
+		required_missions = {
+		}
+		
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = { religion = kobold_dragon_cult }
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 50
+				religion = kobold_dragon_cult
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = kobold_spread_our_worship
+				duration = 9125
+			}
+		}
+	}
+	
+	KOB_enforce_our_religion = {
+		icon = mission_construct_a_corsair_fleet
+		ai = yes
+		position = 11
+		
+		required_missions = {
+			KOB_spread_our_worship
+		}
+		
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = { religion = kobold_dragon_cult }
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 100
+				religion = kobold_dragon_cult
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = kobold_enforce_our_religion
+				duration = 9125
+			}
+		}
+	}
+	
+	KOB_build_the_dragon_temple = {
+		icon = mission_conquer_sindh_dlh
+		ai = yes
+		position = 12
+		
+		required_missions = {
+			KOB_enforce_our_religion
+		}
+		
+		provinces_to_highlight = {
+			province_id = 185
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			owns = 185
+			adm_power = 200
+			treasury = 2000
+		}
+		
+		effect = {
+			185 = {
+				add_base_tax = 3
+				add_permanent_province_modifier = {
+					name = kobold_dragon_temple
+					duration = -1
+				}
+			}
+			add_adm_power = -200
+			add_treasury = -2000
+		}
+	}
+	
+	KOB_crown_the_dragon_spawn = {
+		icon = mission_claim_hispaniola
+		ai = yes
+		position = 13
+		
+		required_missions = {
+			KOB_build_the_dragon_temple
+		}
+		
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = { religion = kobold_dragon_cult }
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 150
+				religion = kobold_dragon_cult
+			}
+			185 = {
+				owned_by = ROOT
+				has_province_modifier = kobold_dragon_temple
+			}
+		}
+		
+		effect = {
+			country_event = { id = flavor_kobildzan.2 }
+		}
+	}
+}
+
+KOB_2_dragon = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		tag = Z38
+		has_country_flag = kobold_dragon_path
+	}
+	
+	KOB_punish_the_humans = {
+		icon = mission_confrontation
+		ai = yes
+		position = 10
+		
+		required_missions = {
+			KOB_solidify_our_dragon_worship
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = westmounts_area
+				area = moorhills_area
+				area = beronmoor_area
+				area = south_alen_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			westmounts_area = {
+				type = all
+				owned_by = ROOT
+			}
+			moorhills_area = {
+				type = all
+				owned_by = ROOT
+			}
+			beronmoor_area = {
+				type = all
+				owned_by = ROOT
+			}
+			south_alen_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		
+		effect = {
+			gawed_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+		}
+	}
+	
+	KOB_devastate_gawed = {
+		icon = mission_ghost_town
+		ai = yes
+		position = 11
+		
+		required_missions = {
+			KOB_punish_the_humans
+		}
+		
+		provinces_to_highlight = {
+			province_id = 221
+		}
+		
+		trigger = { #Fuck gamers
+			OR = {
+				AND = {
+					owns = 221
+					mil_power = 250
+					A13 = { exists = no }
+				}
+				221 = {
+					controlled_by = ROOT
+					OR = {
+						devastation = 50
+						AND = {
+							has_province_modifier = scorched_earth
+							devastation = 25
+						}
+					}
+					owner = { war_with = ROOT }
+				}
+			}
+		}
+		
+		effect = {
+			if = {
+				limit = { owns = 221 }
+				add_mil_power = -250
+				221 = { add_devastation = 50 }
+			}
+			add_prestige = 10
+			alenic_frontier_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	
+	KOB_continue_the_dragonwake = {
+		icon = mission_guarded_market
+		ai = yes
+		position = 12
+		
+		required_missions = {
+			KOB_devastate_gawed
+		}
+		
+		provinces_to_highlight = {
+			region = alenic_frontier_region
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			alenic_frontier_region = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		
+		effect = {
+			damescrown_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			add_mil_power = 150
+		}
+	}
+	
+	KOB_at_the_edge_of_the_empire = {
+		icon = mission_golden_century
+		ai = yes
+		position = 13
+		
+		required_missions = {
+			KOB_continue_the_dragonwake
+		}
+		
+		provinces_to_highlight = {
+			region = damescrown_region
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			damescrown_region = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = kobold_conqueror
+				duration = 18250
+			}
+		}
+	}
+}
+
+KOB_3_dragon = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		tag = Z38
+		has_country_flag = kobold_dragon_path
+	}
+	
+	KOB_solidify_our_dragon_worship = {
+		icon = mission_door_trade
+		ai = yes
+		position = 9
+		
+		required_missions = {
+			KOB_determine_our_fate
+		}
+		
+		provinces_to_highlight = {
+			owned_by = ROOT
+			has_tax_building_trigger = no
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				has_tax_building_trigger = yes
+			}
+		}
+		
+		effect = {
+			westmounts_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			moorhills_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			beronmoor_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			south_alen_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			small_country_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			add_country_modifier = {
+				name = kobold_faith
+				duration = 18250
+			}
+		}
+	}
+	
+	KOB_conquer_the_halflings = {
+		icon = mission_conquer_benin
+		ai = yes
+		position = 10
+		
+		required_missions = {
+			KOB_solidify_our_dragon_worship
+		}
+		
+		provinces_to_highlight = {
+			region = small_country_region
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			small_country_region = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		
+		effect = {
+			deranne_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			southroy_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			northern_flats_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			ionnidar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+			redglades_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+		}
+	}
+	
+	KOB_push_south = {
+		icon = mission_assassination
+		ai = yes
+		position = 11
+		
+		required_missions = {
+			KOB_conquer_the_halflings
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = deranne_area
+				area = southroy_area
+				area = northern_flats_area
+				area = ionnidar_area
+				area = redglades_area
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			deranne_area = {
+				type = all
+				owned_by = ROOT
+			}
+			southroy_area = {
+				type = all
+				owned_by = ROOT
+			}
+			northern_flats_area = {
+				type = all
+				owned_by = ROOT
+			}
+			ionnidar_area = {
+				type = all
+				owned_by = ROOT
+			}
+			redglades_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		
+		effect = {
+			lencenor_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+		}
+	}
+	
+	KOB_subjugate_the_humans = {
+		icon = mission_african_trade_post
+		ai = yes
+		position = 12
+		
+		required_missions = {
+			KOB_push_south
+		}
+		
+		provinces_to_highlight = {
+			region = lencenor_region
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			lencenor_region = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = kobold_subjugation
+				duration = -1
+			}
+		}
+	}
+	
+	KOB_extinguish_hope = {
+		icon = mission_murder
+		ai = yes
+		position = 14
+		
+		required_missions = {
+			KOB_subjugate_the_humans
+			KOB_at_the_edge_of_the_empire
+			KOB_push_into_anbennar
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				owner = { is_emperor = yes }
+				owner = { is_elector = yes }
+			}
+			is_capital = yes
+			NOT = { controlled_by = ROOT }
+		}
+		
+		trigger = {
+			eoa_is_dismantled = yes
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = kobold_fire
+				duration = -1
+			}
+		}
+	}
+}
+
+KOB_4_dragon = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		tag = Z38
+		has_country_flag = kobold_dragon_path
+	}
+	
+	KOB_show_our_might = {
+		icon = mission_mayan_conquest
+		ai = yes
+		position = 10
+		
+		required_missions = {
+			KOB_solidify_our_dragon_worship
+		}
+		
+		trigger = {
+			is_great_power = yes
+		}
+		
+		effect = {
+			add_prestige = 20
+			add_country_modifier = {
+				name = kobold_great_power
+				duration = 18250
+			}
+		}
+	}
+	
+	KOB_invade_the_dwarven_mountain = {
+		icon = mission_portuguese_oman
+		ai = yes
+		position = 12
+		
+		required_missions = {
+			KOB_push_south
+		}
+		
+		provinces_to_highlight = {
+			area = ruby_mountains_area
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			ruby_mountains_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		
+		effect = {
+			ruby_mountains_area = {
+				change_religion = kobold_dragon_cult
+			}
+			west_dameshead_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_claim = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_claim = ROOT
+			}
+		}
+	}
+	
+	KOB_push_into_anbennar = {
+		icon = mission_protect_albania
+
+		ai = yes
+		position = 13
+		
+		required_missions = {
+			KOB_invade_the_dwarven_mountain
+		}
+		
+		provinces_to_highlight = {
+			region = west_dameshead_region
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			west_dameshead_region = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		
+		effect = {
+			add_mil_power = 350
+		}
+	}
+}
+
+KOB_5_dragon = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		tag = Z38
+		has_country_flag = kobold_dragon_path
+	}
+	
+	KOB_strenght_in_the_face_of_our_ennemies = {
+		icon = mission_rb_control_electors
+		ai = yes
+		position = 11
+		
+		required_missions = {
+			KOB_show_our_might
+		}
+		
+		trigger = {
+			any_known_country = {
+				coalition_target = ROOT
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = kobold_show_our_might
+				duration = 9125
+			}
+		}
+	}
+	
+	KOB_march_against_our_enemies = {
+		icon = mission_jungle_pilgrim
+		ai = yes
+		position = 13
+		
+		required_missions = {
+			KOB_strenght_in_the_face_of_our_ennemies
+		}
+		
+		trigger = {
+			is_in_war = {
+				defender_leader = ROOT
+				casus_belli = cb_super_badboy
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = kobold_march_against_our_enemies
+				duration = 9125
+			}
+		}
+	}
+}
+
