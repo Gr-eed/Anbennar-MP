@@ -1,0 +1,596 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_nothing"
+		texturefile = "gfx/interface/nothing.dds"
+	}	
+	spriteType = {
+		name = "GFX_outliner_options"
+		texturefile = "gfx/interface/outliner_options.dds"
+	}	
+	spriteType = {
+		name = "GFX_add_policy"
+		texturefile = "gfx/interface/add_policy.dds"
+	}	
+	spriteType = {
+		name = "GFX_idea_humanist_ideas_2"
+		texturefile = "gfx//interface//ideas//idea_humanist_ideas_2.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_maritime_ideas_2"
+		texturefile = "gfx//interface//ideas//idea_maritime_ideas_2.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_influence_ideas_2"
+		texturefile = "gfx//interface//ideas//idea_influence_ideas_2.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_native_adm_ideas_2"
+		texturefile = "gfx//interface//ideas//native_adm_ideas_2.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_native_dip_ideas_2"
+		texturefile = "gfx//interface//ideas//native_dip_ideas_2.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_native_mil_ideas_2"
+		texturefile = "gfx//interface//ideas//native_mil_ideas_2.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_none"
+		texturefile = "gfx//interface//ideas//empty.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_aristo0_2"
+		texturefile = "gfx//interface//ideas//idea_aristo0_2.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_plutocracy_ideas_2"
+		texturefile = "gfx//interface//ideas//idea_plutocracy_ideas_2.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_innovativeness_ideas_2"
+		texturefile = "gfx//interface//ideas//idea_innovativeness_ideas_2.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_religious_ideas_2"
+		texturefile = "gfx//interface//ideas//idea_religious_ideas_2.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_spy_ideas_2"
+		texturefile = "gfx//interface//ideas//idea_spy_ideas_2.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_diplomatic_ideas_2"
+		texturefile = "gfx//interface//ideas//idea_dynasty0_2.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_offensive_ideas_2"
+		texturefile = "gfx//interface//ideas//idea_offensive_ideas_2.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_defensive_ideas_2"
+		texturefile = "gfx//interface//ideas//idea_defensive_ideas_2.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_trade_ideas_2"
+		texturefile = "gfx//interface//ideas//idea_trade_ideas_2.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_economic_ideas_2"
+		texturefile = "gfx//interface//ideas//idea_economic_ideas_2.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_exploration_ideas_2"
+		texturefile = "gfx//interface//ideas//idea_exploration_ideas_2.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_naval_ideas_2"
+		texturefile = "gfx//interface//ideas//idea_naval_ideas_2.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_empty"
+		texturefile = "gfx//interface//ideas//empty.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_unknown"
+		texturefile = "gfx//interface//ideas_EU4//unknown.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+		legacy_lazy_load = no
+	}	
+	
+	spriteType = {
+		name = "GFX_idea_expansion_ideas_2"
+		texturefile = "gfx//interface//ideas//idea_expansion_ideas_2.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_quality_ideas_2"
+		texturefile = "gfx//interface//ideas//idea_quality_ideas_2.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_quantity_ideas_2"
+		texturefile = "gfx//interface//ideas//idea_quantity_ideas_2.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_administrative_ideas_2"
+		texturefile = "gfx//interface//ideas//idea_administrative_ideas_2.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_cb_coast"
+		texturefile = "gfx/interface/casus_bellis/cb_coast.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_cb_seekrieg"
+		texturefile = "gfx/interface/casus_bellis/cb_seekrieg.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_wehrpflicht0"
+		texturefile = "gfx//interface//ideas//idea_wehrpflicht.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+
+	spriteType = {
+		name = "GFX_idea_stehendesheer0"
+		texturefile = "gfx//interface//ideas//idea_standing_army.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	
+	spriteType = {
+		name = "GFX_idea_islam0"
+		texturefile = "gfx//interface//ideas//idea_islam.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_entwicklung0"
+		texturefile = "gfx//interface//ideas//idea_entwicklung.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_festung0"
+		texturefile = "gfx//interface//ideas//idea_festung.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_flottenbasis0"
+		texturefile = "gfx//interface//ideas//idea_flottenbasis.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_imperialismus0"
+		texturefile = "gfx//interface//ideas//idea_imperialismus.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_justiz0"
+		texturefile = "gfx//interface//ideas//idea_justiz.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_katholisch0"
+		texturefile = "gfx//interface//ideas//idea_katholisch.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_kolonialimperium0"
+		texturefile = "gfx//interface//ideas//idea_kolonialimperium.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_kriegsproduktion0"
+		texturefile = "gfx//interface//ideas//idea_kriegsproduktion.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_propaganda0"
+		texturefile = "gfx//interface//ideas//idea_propaganda.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_soldnerheer0"
+		texturefile = "gfx//interface//ideas//idea_soldnerheer.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_waffenqualitat0"
+		texturefile = "gfx//interface//ideas//idea_waffenqualitat.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_generalstab0"
+		texturefile = "gfx//interface//ideas//idea_generalstab.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_republik0"
+		texturefile = "gfx//interface//ideas//idea_republik.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_gesellschaft0"
+		texturefile = "gfx//interface//ideas//idea_gesellschaft.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_monarchie0"
+		texturefile = "gfx//interface//ideas//idea_monarchie.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+
+	spriteType = {
+		name = "GFX_idea_nationalismus0"
+		texturefile = "gfx//interface//ideas//idea_nationalismus.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}	
+	
+	spriteType = {
+		name = "GFX_idea_assimilation0"
+		texturefile = "gfx//interface//ideas//idea_assimilation.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_gesundheit0"
+		texturefile = "gfx//interface//ideas//idea_gesundheit.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_staatsverwaltung0"
+		texturefile = "gfx//interface//ideas//idea_staatsverwaltung.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_militarismus0"
+		texturefile = "gfx//interface//ideas//idea_militarismus.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_formation0"
+		texturefile = "gfx//interface//ideas//idea_formation.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_shock0"
+		texturefile = "gfx//interface//ideas//idea_shockfocus.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_fire0"
+		texturefile = "gfx//interface//ideas//idea_feuerfocus.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_zentra0"
+		texturefile = "gfx//interface//ideas//idea_zentralismus.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_dezentra0"
+		texturefile = "gfx//interface//ideas//idea_dezentralismus.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_horde0"
+		texturefile = "gfx//interface//ideas//idea_horde.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+
+	spriteType = {
+		name = "GFX_idea_dynasty0"
+		texturefile = "gfx//interface//ideas//idea_dynasty.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_aristo0"
+		texturefile = "gfx//interface//ideas//idea_aristo.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_konigreich0"
+		texturefile = "gfx//interface//ideas//idea_konigreich.tga"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_politik_add_neu"
+		texturefile = "gfx//interface//politik_add_neu.tga"
+		noOfFrames = 1
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_politik_add_neu_2"
+		texturefile = "gfx//interface//politik_add_neu_2.tga"
+		noOfFrames = 1
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_politik_add_neu_3"
+		texturefile = "gfx//interface//politik_add_neu_3.tga"
+		noOfFrames = 1
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_button_gericht_1"
+		texturefile = "gfx/interface/ideas_EU4/government_1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_button_gericht_2"
+		texturefile = "gfx/interface/ideas_EU4/government_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_button_gericht_3"
+		texturefile = "gfx/interface/ideas_EU4/government_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_button_gericht_4"
+		texturefile = "gfx/interface/ideas_EU4/government_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_button_f_idea_1"
+		texturefile = "gfx/interface/ideas_EU4/f_idea_1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_button_f_idea_2"
+		texturefile = "gfx/interface/ideas_EU4/f_idea_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_button_f_idea_3"
+		texturefile = "gfx/interface/ideas_EU4/f_idea_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_button_f_idea_4"
+		texturefile = "gfx/interface/ideas_EU4/f_idea_4.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_button_f_idea_5"
+		texturefile = "gfx/interface/ideas_EU4/f_idea_5.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_button_f_idea_6"
+		texturefile = "gfx/interface/ideas_EU4/f_idea_6.dds"
+	}
+
+	spriteType = {
+		name = "GFX_button_galle_dock_1"
+		texturefile = "gfx/interface/ideas_EU4/galle_dock_1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_button_galle_dock_2"
+		texturefile = "gfx/interface/ideas_EU4/galle_dock_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_button_galle_dock_3"
+		texturefile = "gfx/interface/ideas_EU4/galle_dock_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_button_university_1"
+		texturefile = "gfx/interface/ideas_EU4/university_1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_button_land_fl_1"
+		texturefile = "gfx/interface/ideas_EU4/land_fl_1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_button_land_fl_2"
+		texturefile = "gfx/interface/ideas_EU4/land_fl_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_button_land_fl_3"
+		texturefile = "gfx/interface/ideas_EU4/land_fl_3.dds"
+	}
+	
+	############################
+	#### Markobuilder
+	############################
+	spriteType = {
+		name = "GFX_banner_left_6"
+		texturefile = "gfx//interface//banner_left_6.dds"
+		
+	}
+	spriteType = {
+		name = "GFX_banner_left_12"
+		texturefile = "gfx//interface//banner_left_12.dds"
+		
+	}
+	spriteType = {
+		name = "GFX_banner_left_8"
+		texturefile = "gfx//interface//banner_left_8.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_banner_right_1"
+		texturefile = "gfx//interface//banner_right_1.dds"
+	}	
+	spriteType = {
+		name = "GFX_banner_right_4"
+		texturefile = "gfx//interface//banner_right_4.dds"
+	}	
+	spriteType = {
+		name = "GFX_banner_right_5"
+		texturefile = "gfx//interface//banner_right_5.dds"
+	}

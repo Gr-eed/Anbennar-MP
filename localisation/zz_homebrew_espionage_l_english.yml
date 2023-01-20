@@ -1,0 +1,28 @@
+﻿l_english:
+ espionage_network_title:0 "Establish New Networks"
+ espionage_network_tooltip:0 "We can expand our networks in §Y[From.GetName]§!, reducing their spy detection by §G-33%§! for ten years."
+ espionage_network_desc:0 "This action will expand our networks in §Y[From.GetName]§!, reducing their spy detection by §G-33%§! for ten years."
+ 
+ espionage_mil_title:0 "Sabotage Military"
+ espionage_mil_tooltip:0 "We can order our agents to burn supply depots and disrupt §Y[From.GetName]§!'s military command, reducing their forcelimit by §G-15%§! for three years."
+ espionage_mil_desc:0 "This action will burn supply depots and disrupt §Y[From.GetName]§!'s military command, reducing their forcelimit by §G-15%§! for three years."
+ 
+ espionage_naval_title:0 "Sabotage Navy"
+ espionage_naval_tooltip:0 "We can order our agents to burn dockyards and disrupt §Y[From.GetName]§!'s naval command, reducing their naval forcelimit by §G-20%§! for three years."
+ espionage_naval_desc:0 "This action will burn dockyards and disrupt §Y[From.GetName]§!'s naval command, reducing their naval forcelimit by §G-20%§! for three years."
+ 
+ espionage_siege_title:0 "Sabotage Engineering"
+ espionage_siege_tooltip:0 "We can order our agents to destroy siege equipment and compromise §Y[From.GetName]§!'s fortifications, reducing their defensiveness by §G-15%§! and reducing their siege ability by §G-10%§! for three years."
+ espionage_siege_desc:0 "This action will destroy siege equipment and compromise §Y[From.GetName]§!'s fortifications, reducing their defensiveness by §G-15%§! and reducing their siege ability by §G-10%§! for three years."
+ 
+ espionage_eco_title:0 "Sabotage Ministry of Interior"
+ espionage_eco_tooltip:0 "We can order our agents to infiltrate and weaken §Y[From.GetName]§!'s ministry of interior, increasing their construction cost by §G+7.5%§! and giving them §G+0.1§! yearly corruption for five years."
+ espionage_eco_desc:0 "This action will infiltrate and weaken §Y[From.GetName]§!'s ministry of interior, increasing their construction cost by §G+7.5%§! and giving them §G+0.1§! yearly corruption for five years."
+ 
+ espionage_full_title:0 "Enact Master Plan"
+ espionage_full_tooltip:0 "We can order our agents to use every asset at their disposal, providing the effects of Sabotage Military, Sabotage Navy, Sabotage Engineering and Sabotage Ministry of Interior for three years."
+ espionage_full_desc:0 "This action will provide the effects of Sabotage Military, Sabotage Navy, Sabotage Engineering and Sabotage Ministry of Interior for three years."
+ 
+ espionage_assassinate_title:0 "Attempt Assassination"
+ espionage_assassinate_tooltip:0 "We can order our agents to attempt to take the life of §Y[From.GetName]§!'s ruler, costing us §O100§! diplomatic power. This is not an easy undertaking, and their ruler is likely to survive, but our agents may be able to wound them or kill one of their advisors in the process."
+ espionage_assassinate_desc:0 "This action will have a chance to kill §Y[From.GetName]§!'s ruler, regardless ofoutcome will cost us an additional §O100§! diplomatic power."
